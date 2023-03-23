@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM编程,开启窗口</title>
+</head>
+<body>
+    <input type="button" value="开启百度(新窗口)" onclick="window.open('http://www.baidu.com')" /> <!--注意单双引号的交替-->
+
+    <input type="button" value="开启百度(新前窗口)" onclick="window.open('http://www.baidu.com','_blank')"> 
+    <!--绑定点击事件句柄-->
+
+    <input type="button" value="开启百度(当前窗口)" onclick="window.open('http://www.baidu.com','_self')" />
+
+    <input type="button" value="开启百度(父窗口)" onclick="window.open('http://www.baidu.com','_parent')" />
+
+    <input type="button" value="开启百度(顶级窗口)" onclick="window.open('http://www.baidu.com','_top')" />
+
+    <input type="button" value="关闭窗口" onclick="window.close()"> <!--第一种注册事件,点击事件-->
+</body>
+</html>

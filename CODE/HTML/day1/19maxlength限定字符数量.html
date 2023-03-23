@@ -1,0 +1,24 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开该页面的字符编码,不是本页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maxlength限定字符数</title> <!-- 页面的标题-->
+</head>
+<body>
+    <form action = "http://localhost:8080/oa/text">
+        <!-- maxlength 设置文本框中可输入的字符数量-->
+        <input type = "text" name = "test" maxlength = "10"/><br>
+        <input type = "submit" value = "提交"/>
+        &nbsp;&nbsp;&nbsp; <!-- 空格-->
+        <input type = "reset" value = "重置"/>
+        <!-- submit 和 reset 只有在 form 表单中才有效果-->
+    </form>
+    <!-- 结果地址栏
+    http://localhost:8080/oa/text?test=1234567891 
+   text:表示name的值
+    1234567891 表示value 的值-->
+    
+</body>
+</html>

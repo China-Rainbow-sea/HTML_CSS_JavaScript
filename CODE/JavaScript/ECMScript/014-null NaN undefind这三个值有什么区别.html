@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>null NaN undefined 数据类型不一致</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+       // null NaN undefind 数据类型不一致
+       window.alert(typeof null);  // "object"
+       window.alert(typeof NaN); // "number"
+       window.alert(typeof undefined);  // "undefind"
+
+       window.alert(null == NaN); // false
+       window.alert(null == undefined);  // true
+       window.alert(undefined == NaN); // fasle
+       // Javascript 当中有两个比较特殊的运算符
+       // == 等同运算符：仅仅只会比较变量内容的值，但是不会比较变量的类型
+       // === (全等运算符) 不仅会比较变量的内容，还会比较变量的类型，只有当者两种都相同才会返回 true ，否则返回 false
+       // 从上述的 typeof 运算结果可以知道他们之间的的类型信息.
+
+       window.alert(null === NaN); // false 
+       window.alert(null === undefined); // false
+       window.alert(undefined === NaN);  // false
+    </script>
+    
+</body>
+</html>

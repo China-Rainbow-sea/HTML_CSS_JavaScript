@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS函数初步</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            java 中方法有重载机制，js中的函数能重载吗?
+            java中方法的重载：方法名相同，参数列表的个数，类型，顺序不同
+            但是在 javaScript 中函数不需要指明函数的返回值类型，不需要指明函数的列表中的类型
+            所以在javaScript没有重载
+        */
+
+        function sum(a,b) {
+            return a + b;
+        }
+
+        // 调用函数sum
+        var retValue = sum(1,2);
+        alert(retValue); 
+
+        var retValue2 = sum("jack");
+        alert(retValue2); // jack undefined a + b 字符串的拼接 jack 赋值给 a 变量,b变量没有赋值系统默认赋值为 undefined 
+
+        var retValue3 = sum();
+        alert(retValue3) // NaN
+
+        var retValue4 = sum(1,2,3);
+        alert("结果: " + retValue4);  // 3 （1 + 2） 3没有赋值
+
+        function test1(username) {
+            alert("test1");
+        }
+
+        /*在javascript当中,函数的名字不能重名，当函数重名的时候，后声明的函数会将之前声明的同名函数覆盖*/
+        function test1() {
+            alert("test1 test1");
+        }
+
+        // 这个函数调用的是 test1() 空参数函数
+        test1("lisi"); // 返回 test1 test1 注意: javaScript 是无法重载的，如果定义了，两个同名的函数，则以最后一个为主，最后一个函数会覆盖上面所有的同名的函数。
+    
+    </script>
+</body>
+</html>

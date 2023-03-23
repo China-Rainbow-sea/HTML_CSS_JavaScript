@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一种在html中嵌入js代码</title>
+</head>
+    <style tyle="text/javascript">
+        
+    </style>
+<body>
+    <h3>什么是javascript 和  Java 有关系吗</h3>
+    java 和 javascirpt 没有任何关系,java运行在jvm当中
+    javascirpt 运行在浏览器当中
+    javascript 以前做livescipt是网景公司“布兰登艾奇”开发的在历史的某个阶段sun公司和网景公司有过合作.蹭了Java的热度,搭上了java的顺风车.
+    <h3>javascript是一门脚本语言,什么是脚本语言</h3>
+    所有脚本语言都有这样的一个特点;脚本语言最终运行的哪个程序是以普通文本的形式保存的,java就不是脚本于洋,java语言需要先编写xxx.java源文件，在源文件中编写源代码，然后Java源代码还需要进行一个编译，编译之后会生成xxx.class文件,而最终运行的class文件,class文件，class文件不是普通文本，用记事本打不开,所有java不是脚本语言,javascript是脚本语言
+    <h3>js是干什么的</h3>
+    <h4>html css javascript他们的关系</h4>
+    html 是主体
+    css 是用来修饰html的
+    js 是用来操作html和css的，修改html中的元素，修改css样式，达到网页的动态效果。
+    <ul>
+        <li>需求:在页面中有一个按钮，用户点击这个按钮的时候弹出对话框</li>
+        <li>2.javascript是一种基于“事件驱动”的编程语言，一般就是依靠事件来触发js代码执行的
+            例如：鼠标单击事件click。鼠标双击事件: dblcick,获取焦点事件;focus失去焦点事件 blur
+        </li>
+        <li>在js当中任何一个事件都有对应的一个“事件句柄”，所有的事件名称前面添加 “on”
+            click 对应的事件句柄: onclick 单击事件
+            dblcick 对应的事件句柄: ondblcick 双击事件
+            foucs 对应的事件句柄: onfouce 获取焦点事件
+            blur 对应的事件句柄: onblur 失去焦点事件
+        </li>
+        <li>注意：所有的事件句柄都是以 "标签属性存在的"</li>
+        <li>onclick 后面的js代码什么时候执行呢
+            不会再页面打开的时候执行，只有当鼠标单击blick事件发生之后，才会执行这个js代码
+        </li>
+        <li>再js中有一个内置的隐含对象: window:注意是全部小写的,window:代表的是浏览器窗口对象，可以直接拿来使用,window对象有一个alert方法/函数，他可以完成弹窗操作</li>
+    </ul>
+
+    <input type="button" value="hello" onclick="window.alert('弹窗界面')" /> <!--注意其中的 单双引号的设置-->
+    <input type="button" value="hello1" onclick="window.alert("无效")" /> <!-- 不可以在同一个地方使用相同的单双引号，要么一个是单引号，另外一个是双引号-->
+    <input type="button" value="hello2" onclick='window.alert("字符串可以使用双引号")' />
+    <!--js当中字符串可以是双引号或者是单引号，
+    js 中的一条语句结束之后，可以写;(分号),也可以不写分号-->
+    <input type="button" value="hello3" onclick="alert('Iwindow可以省略不写')" />
+
+    <input type="button" value="hello4" onclick="window.alert('可以有多个弹窗,定义在同一个onclick点击事件中,这是第一个')
+     window.alert('这是第二个') 
+     window.alert('这是第三个')" /> 
+     <!-- 需要注意的是，这多个alert都必须是在一个onclick="分号内的"-->
+</body>
+</html>

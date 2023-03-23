@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 中是数据类型</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+           虽然Javascript 中的变量在声明的时候不惜以指定数据类型，但是在赋值，每个数据还是有类型等等，所以这里也需要学习一下，javascirpt 包括哪些数据类型?
+           javascirpt 数据类型有：原始类型西，引用类型
+           原始类型: Unddefined, Number,String,Boolean Null
+           引用类型: Object 以及 object 的子类
+           2. ES 规范(ECMAsript 规范) 在 ES6之后，有右基于以上的6中类型之外添加了一种新的类型： Symbol
+           3.javascript中有一个运算符叫做 typeof 这个运算符可以在程序的运行阶段动态的获取变量等等数据类型。
+           typeof 运算符的语法格式:
+              typeof 变量名;
+           typeof 运算符的运算结果是以下 6 个字符串之一，注意字符串都是全部小写的,并且都是带有 ""双引号的
+           "undefined","number","string","boolean","object","function" 
+           4. 在javascript 当中比较字符串是否相等使用 “==”完成，而没有 equals
+        */
+       // 求和，要求 a 变量和 b 变量将来的数据类型必须是数字，不能是其他类型
+       // 因为以下定义的这个sum函数是为了完成两个数字的求和。
+       function sum(a,b) {
+         if(typeof a == "number" && typeof b == "number" ) {
+            return a + b;
+         }
+         alert(a + "," + b + "必须都为数字!");
+       }
+
+       // 别人去调用你写的 sum函数
+       var reValue = sum(false,"abc");
+       window.alert(reValue); // undefined
+
+       var reValue2 = sum(1,2);
+       window.alert(reValue2);  // 3
+
+
+       var i ;
+       window.alert(typeof i);  // "undefind"
+       
+       var k = 10;
+       window.alert(typeof k);  // "number"
+
+       var f = "abc";
+       window.alert(typeof f);  // "string" 注意是 首字母小写
+
+       var d = null;
+       window.alert(typeof d);  // "object" null 属于Null类型，但是typeof运算符的结果是 "object"
+
+       var flag = false;
+       window.alert(typeof flag); //"boolean"
+
+       // 一个函数
+       function sayHello() {
+
+       }
+
+       window.alert("***************************");
+       window.alert(typeof sayHello);  // "function" 函数类型
+
+       var obj = new Object();
+       window.alert(typeof obj); // "object" 
+
+       var i;  // undefind
+       var k = undefined;
+       var y = "undefind";  // 这也是一个数据类型
+       window.alert(y == k); // false
+       window.alert(k == i);  // true
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册</title>
+    <!-- 导入css文件 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 导入javascript文件 -->
+    <script src="./signIn.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container">
+            <!--表单注册-->
+            <form>
+                <h1>用户注册</h1>
+                <input type="text" name="username" id="username" placeholder="用户名" required />
+                <span id="usenameError"></span>
+
+                <input type="text" name="userpwd" id="userpwd" placeholder="密码" required>
+                <span id="userpwdError"></span>
+
+                <input type="text" name="userpwd2" id="userpwd2" placeholder="确认密码" required>
+                <span id="userpwd2Error"></span>
+
+                <input type="text" name="email" id="email" placeholder="邮箱" required>
+                <span id="emailError"></span>
+                
+                <button onclick="return false">发送验证码</button>
+                <input type="text" placeholder="验证码" required>
+                <button id="submitBtn">注册</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

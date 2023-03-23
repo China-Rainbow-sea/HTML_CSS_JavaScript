@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10月22日第二道题目</title>
+
+    <!-- 导入css样式-->
+    <link rel="stylesheet" type="text/css" href="../CSS/10_22_2.css"/>
+    <!--导入javascript样式-->
+    <script language="javascript" type="text/javascript">
+        function change()
+        {
+            var radios = document.getElementById("isdent");  // 获取 id=isdent的值
+            if(radios.checked)
+            {
+                document.getElementById("ucard").value="";
+                document.getElementById("uschool").value="";
+            }
+            else
+            {
+                document.getElementById("ucard").value="暂时不可用";
+                document.getElementById("uschool").value="暂时不可用";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <form action="http://localhost:8080/test?">
+        <table align="center">
+            <tr>
+                <th colspan="2">身份注册</th>
+            </tr>
+            <tr>
+                <td>用户ID:</td>
+                <td>
+                    <input readonly="readonly" id="uid" value="stu001">
+                    <!-- readonly:属性规定输入字段为只读,只读字段是不能修改的-->
+                </td>
+            </tr>
+            <tr>
+                <td>用户名:</td>
+                <td>
+                    <input type="text" name="name" id="uname"/>
+                </td>
+            </tr>
+            <tr>
+                <td>用户密码:</td>
+                <td>
+                    <input type="password" name="upass" id="upass"/>
+                </td>
+            </tr>
+            <tr>
+                <td>爱好:</td>
+                <td> <!-- checkbox 复选框,name相同的为一组,checked表示默认选择-->
+                    <input type="checkbox" name="checkbox" value="badminton" />羽毛球
+                    &nbsp;&nbsp;
+                    <input type="checkbox" name="checkbox" value="basketball"/>篮球
+                    &nbsp;&nbsp;
+                    <input type="checkbox" name="checkbox" checked value="volleyball" />排球
+                    &nbsp;&nbsp;
+                    <input type="checkbox" name="checkbox" value="swim"> 游泳
+                </td>
+            </tr>
+            <tr>
+                <td>是否学生:</td>
+                <td> <!--radio 表示单选框,name相同的为一组,checked默认选中-->
+                    <input type="radio" id="isdent" name="radio" checked value="1" onChange="change()" />是
+                    &nbsp;&nbsp;
+                    <input id="nodent" onChange="change()"type="radio" name="radio" value="0"/> 否
+                </td>
+            </tr>
+            <tr>
+                <td>身份证号:</td>
+                <td>
+                    <input id="ucard" type="text" name="ucard" maxlength="18" 
+                    placeholder="请输入证件号码"/> <!--placeholder 表示在文本框的提示-->
+                </td>
+            </tr>
+            <tr>
+                <td>学校名称:</td>
+                <td>
+                    <input id="uschool" type="text" name="uschool" placeholder="请输入学校名称"/>
+                </td>
+            </tr>
+            <tr>
+                <td>专业名称:</td>
+                <td>
+                    <input id="umajor" type="text" name="umajor" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="margin-left" >
+                    <input type="submit" style="margin-left:110px;" value="提交"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

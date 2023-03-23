@@ -1,0 +1,112 @@
+/* 界面初始化 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 标准盒子 */
+    box-sizing: border-box;
+
+}
+
+
+/* 设置整体布局样式 */
+body,
+html {
+    /* 字体样式 */
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f8f8;
+    /* 锁定背景，防止填充整个页面， */
+    background-attachment: fixed;
+    display: flex;
+    /* flex-direction: column; */
+    /* 水平居中 */
+    justify-content: center;
+    /* 垂直居中 */
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+
+    /* 
+    background-attachment:
+    fixed： 背景图像相对于视口（viewport）固定。 
+    scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起滚动。
+     local： 背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像也会跟着滚动，因为背景图像总是要跟着内容
+
+    flex-direction属性决定主轴的方向（即项目的排列方向）
+    row（默认值）：主轴为水平方向，起点在左端。
+    row-reverse：主轴为水平方向，起点在右端。
+    column：主轴为垂直方向，起点在上沿。
+    column-reverse：主轴为垂直方向，起点在下沿 */
+}
+
+.container {
+    /* 相对定位 */
+    position: relative;
+    background: #fff;
+    /* 边框锐度，50%为圆*/
+    border-radius: 10px;
+    /* 阴影布局 */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    padding: 0.6rem;
+    width: 50rem;
+
+    /* rem是CSS3新增的相对长度单位，是指相对于根元素html的font-size计算值的大小。简单可理解为屏幕宽度的百分比。
+    是相对单位；rem单位是相对于HTML标签的字号计算结果；1rem = 1HTML字号大小。
+    如果html标签的font-size是20px，那么1rem就是20。
+    网页的根标签是：html标签；html字号也叫根字号，根标签字号
+    rem是CSS3新增的一个相对单位（root em，根em），这个单位引起了广泛关注。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应 */
+
+}
+
+.form-container form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.8rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.form-container input {
+    width: 100%;
+    height: 2.2rem;
+    /* 文本左边缩进 */
+    text-indent: 2.2rem;
+    border: 1px solid #ccc;
+    /* 上左右边框线消失 */
+    border-left: none;
+    border-top: none;
+    border-right: none;
+
+    /* 点击时input 的边框消失 */
+    outline: none;
+    margin: 0.6rem 0;
+}
+
+/* 鼠标点击选中时,让按钮有一个变小的变化 */
+.form-container button:active {
+    text-transform: scale(0.95, 0.95);
+}
+
+
+.form-container button {
+    padding: 0.4rem 1rem;
+    background: #417dff;
+    color: white;
+    border: 1px solid #fff;
+    /* 鼠标点击时,边框消失 */
+    outline: none;
+    /* 鼠标经过,小手 */
+    cursor: pointer;
+    width: 5rem;
+    /* 设置边框锐度,50%是圆 */
+    border-radius: 8px;
+    /* 加载延迟时间 */
+    transition: all 1000ms ease-in;
+    margin: 0.6rem 0;
+    /* 字体大小 */
+    font-size: 0.6rem;
+    padding: 0.5rem 0;
+}

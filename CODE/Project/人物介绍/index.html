@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户介绍</title>
+    <!-- 导入css样式 -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- 导入js代码 -->
+    <script  type="text/javascript" src="./index.js"></script>
+</head>
+
+<body>
+    <!-- 先整体后局部，先将分类,一个div放所有人物介绍,在一个div 放人物图片-->
+    <div class="container">
+        <div class="testimonial">
+            <!--放人物介绍的文字内容-->
+            <div class="testimonial-text">
+                <div class="user-text active-text">
+                    <p class="title">#</p>
+                    <p>手提花盒，不仅仅是汇聚了智慧与审美，同时也逐渐发展为了一个新的潮流,独特的造型简约的风格,让广大的爱花人群,多了一个极致的选择。</p>
+                    <span>鲜花一</span>
+                </div>
+
+                <div class="user-text">
+                    <p class="title">#</p>
+                    <p>圆形,总是那样给予人无限魔力,授予艺术最大的想象空间,当鲜花进入一个圆形,那般自然和美妙,可以说,圆形花盒,总能给人带来浑然天成的亲切感。</p>
+                    <span>鲜花二</span>
+                </div>
+
+                <div class="user-text">
+                    <p class="title">#</p>
+                    <p>花盒中最为古典传统的一种,可以充分利用几何空间,在一个平面上最大限度地发挥自己的创造思维,给人带来了古典与现代并存的庄重感与仪式感。</p>
+                    <span>鲜花三</span>
+                </div>
+
+                <div class="user-text">
+                    <p class="title">#</p>
+                    <p>手提花盒，不仅仅是汇聚了智慧与审美，同时也逐渐发展为了一个新的潮流,独特的造型简约的风格,让广大的爱花人群,多了一个极致的选择。</p>
+                    <span>鲜花四</span>
+                </div>
+
+                <div class="user-text">
+                    <p class="title">#</p>
+                    <p>圆形,总是那样给予人无限魔力,授予艺术最大的想象空间,当鲜花进入一个圆形,那般自然和美妙,可以说,圆形花盒,总能给人带来浑然天成的亲切感。</p>
+                    <span>鲜花五</span>
+                </div>
+            </div>
+            <!--放人物图片-->
+            <div class="testimonial-pic">
+                <img src="./img/flower_con1.jpeg" alt="" class="user-pic active-pic" onclick="show()">
+                <img src="./img/flower_con2.jpeg" alt="" class="user-pic" onclick="show()">
+                <img src="./img/flower_con3.jpeg" alt="" class="user-pic" onclick="show()">
+                <img src="./img/flower_con4.jpeg" alt="" class="user-pic" onclick="show()">
+                <img src="./img/flower_con5.jpeg" alt="" class="user-pic" onclick="show()">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

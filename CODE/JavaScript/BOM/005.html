@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>005页面</title>
+</head>
+<body>
+    005页面
+    <script type="text/javascript">
+        // 如果当前这个窗口不是顶级窗口的话，将当前窗口设置为顶级窗口
+        function setTop() {
+            // window 是当前浏览器窗口，代表 005.html
+            // 当前窗口的顶级窗口“如果” 不是自己
+            // window.top就是当前窗口对应的顶级窗口
+            //window.self 表示当前自己这个窗口 就是 005窗口
+            console.log(window.top != window.self); // 在浏览器的控制台上显示 ： console
+            if(window.top != window.self) {
+                // 将当前窗口设置为顶级窗口
+                // window.self.location 是005地址
+                // 将顶级窗口的 window.top.location地址设置为005
+                window.top.location = window.self.location;
+            }
+        }
+
+    </script>
+    <input type="button" onclick="setTop()" value="如果当前窗口不是顶级窗口的话,将当前窗口设置为顶级窗口"  />
+    
+</body>
+</html>

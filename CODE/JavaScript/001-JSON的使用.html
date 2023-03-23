@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON的使用</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        1.什么是JSON 有什么用？
+          javascript Object Notaion （javaScript对象标记），简称为JSON(数据交换格式)
+          JSON的主要作用是：一种标准的数据交换格式。（目前非常流行，90%以上的系统，系统A与系统B交换数据的话，都是采用JSON）
+        2.JSON是一种标准的轻量级的数据交换格式，特点是：
+          体积小，易解析
+        3.在实际的开发中有两种数据交换格式，使用最多，其一是JSON,另一个是XML
+          XML体积较大，解析麻烦，但是有其优点是：语法严谨，(通常银行相关的系统之间进行数据交换的话会使用 XML )
+        4. HTML和 XML有一个父亲: SGML（标准通用的标记语言。）
+          HTML主要做页面展示：所以语法松散，很随意。
+          XML 主要做数据存储和数据描述的：所以语法相当严格.
+        5.jSON的语法格式:
+            var jsonObj = {
+                "属性名" : "属性值",
+                "属性名" : "属性值",
+                "属性名" : "属性值"  多个值使用 ","逗号分隔,最后一个值，不用 任何符号
+                ...
+            };
+
+            // 创建 JSON 类型的数组
+            var JSONArr = [
+                {"属性名":"属性值","属性名":"属性值","属性名" : "属性值"},
+                {"属性名":"属性值","属性名":"属性值","属性名" : "属性值"},
+                {"属性名":"属性值","属性名":"属性值","属性名" : "属性值"}
+
+            ]
+        */
+       // 创建JSON对象 （JSON也可以称为无类型对象，轻量级，轻巧，体积小，易解析）
+       var studentObj = {
+        "sno" : "110",
+        "sname" : "张三",
+        "sex" : "男"
+       }
+
+       // 访问JSON对象的属性
+       window.alert(studentObj.sno + "," + studentObj.sname + "," + studentObj.sex );
+
+       // 之前没有使用JSON的时候，定义类，创建对象，访问对象的属性
+       Student = function (sno,sname,sex) {
+        // 定义类的属性
+        this.sno = sno;
+        this.sname = sname;
+        this.sex = sex;
+       }
+
+       var stu = new Student("111","李四","男");
+       window.alert(stu.sno + "," + stu.sname + "," + stu.sex);
+
+       // 定义JSON类型的数组
+       var studnets = [
+        {"sno" : "110", "sname":"张三","sex" : "男"},
+        {"sno" : "120","sname" : "李四","sex" : "男"},
+        {"sno" : "130","sname" : "王五","sex" : "男"}
+       ];
+
+
+
+       // 遍历 JSON 类型的数组
+       for(var i = 0; i < studnets.length; i ++ ) {
+        var stuObj = studnets[i];  // 注意：这里取出的数据元素是 JSON类型的。
+        window.alert(stuObj.sno + "," + stuObj.sname + "," + stuObj.sex);
+       }
+
+    </script>
+    
+</body>
+</html>

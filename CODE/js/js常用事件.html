@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js常用的事件</title>
+</head>
+    <script type="text/javascript">
+        /*
+        1.blur 失去焦点
+        2.change 下拉列表选中项改变，或文本框内容改变
+        3.click 鼠标单击
+        4.dbclick 鼠标双击
+        5.fucas 获得焦点
+        6.keyup 键盘弹起
+        7.lood 页面加载完毕
+        8.mousedown 鼠标按下
+        9.mouseover 鼠标经过
+        10.mousemove 鼠标离开
+        11.mouseout 鼠标离开
+        12.mouseup 鼠标弹起
+        13 reset 表单重置
+        14 select 文本被选定
+        15 submit 表单提交
+        16 load 加载完毕
+        */
+    </script>
+<body>
+    blar事件:<input type="text" onblur="console.log('失去焦点')" />
+
+    <!--change事件: 下拉列表项被改变的时候发生-->
+    <select name="grade" onchange="console.log('下拉列表发生改变')">
+        <option value="gz">高中</option>
+        <option value="zk">专科</option>
+        <option value="bk">本科</option>
+
+    </select><br>
+
+    dbclick事件:<input type="button" value="鼠标双击" ondblclick="console.log('鼠标双击了')" /> <br>
+
+    fous事件:<input type="text" onfocus="console.log('获取到了焦点')" />
+
+    keydown 和 keyup 事件<input type="text" onkeydown="console.log('按键按下了')" onkeyup="console.log('按键弹起了')" />
+
+</body>
+</html>

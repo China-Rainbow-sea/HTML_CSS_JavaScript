@@ -1,0 +1,77 @@
+<!DOCTYPE html> <!-- 表示 html5.0 -->
+<html lang="en"> <!-- 根-->
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开该页面的编码,不是该页面中的字符编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 表格</title> <!-- 页面的标题-->
+</head>
+
+<body>
+    <!-- 表格 table  tr 行tb列-->
+    <table>  <!-- 表格标签-->
+        <tr> <!-- 第一行-->
+            <td>a</td> 
+            <td>b</td>  <!-- 表示该行分列数(td的个数),并赋值-->
+            <td>c</td>
+        </tr> <!-- 第一行结束-->
+        <tr> <!-- 第二行-->
+            <td>d</td>
+            <td>e</td>  <!-- 表示该行分列数(td的个数),并赋值-->
+            <td>f</td>
+        </tr> <!-- 第二行结束-->
+        <tr> <!-- 第三行-->
+            <td>x</td>
+            <td>y</td>  <!-- 表示该行分列数(td的个数),并赋值-->
+            <td>z</td>
+        </tr> <!-- 第三行结束-->
+    </table> <!--表结束-->
+    <hr color = "blue">
+    <br>
+
+    <!-- border 表示表格中边框的大小 px 是像素
+        width 表示表格的宽度可以是数值px像素 或者是百分比
+        height 表示表格的高度可以是数值px像素或者是百分比-->
+    <table border = 1px width = 50% height = "150px" >
+        <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>y</td>
+            <td>z</td>
+        </tr>
+    </table>
+
+    <br>
+    <hr color ="blue">
+    <!-- 表格中可以附加 align = center 居中, 表格居中，行信息居中，列信息居中-->
+    <center> 居中 </center>
+    <table align = "center" border = "1px" width = "300px",height = 50%>
+        <tr align = "center">  <!-- 第一行的数据居中-->
+            <td>a</td>
+            <td>d</td> <!-- 该行分列(td的个数),并赋值-->
+            <td>c</td>
+        </tr>
+        <tr>  <!-- 第二行-->
+            <td>e</td>
+            <td>f</td> <!-- 该行分列(td的个数),并赋值-->
+            <td>g</td>
+        </tr>
+        <tr> <!-- 第三行-->
+            <td>x</td> <!-- 该行分列(td的个数),并赋值-->
+            <td>y</td>
+            <td align = "center">z</td> <!-- 该列的信息居中显示--> 
+        </tr>
+
+    </table>
+    
+</body>
+</html>

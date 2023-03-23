@@ -1,0 +1,125 @@
+body {
+    /* 背景颜色 */
+    background-color: #576574;
+}
+
+.container {
+    width: 400px;
+    height: 500px;
+    background-color: #bdc3c7;
+    /* 外边距和水平垂直居中 */
+    margin: 10% auto;
+    /* 字体颜色 */
+    color: black;
+
+    /* 边框变圆润 */
+    border-radius: 25px;
+
+    /* 内边距,其实就是内补丁 */
+    padding: 60px;
+    /* 加载速度 */
+    transition: 0.5s;
+
+
+    /* margin: auto | length ;
+    如果提供全部四个参数值，将按上－右－下－左的顺序作用于四边。
+    如果只提供一个，将用于全部的四边。
+    如果提供两个，第一个用于上－下，第二个用于左－右。
+    如果提供三个，第一个用于上，第二个用于左－右，第三个用于下
+    auto : 　值被设置为相对边的值 */
+
+}
+
+/* 设置登录字体样式 */
+.container h1 {
+    /* 文本居中 */
+    text-align: center;
+    /* 上下外补丁，控制间距 */
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    /* 登录两字的间距 ,设置*/
+    letter-spacing: 10px;
+    /* 文本颜色 */
+    color: #273c75;
+}
+
+
+/* 输入你的账号和密码的文字样式 */
+.container h3 {
+    /* 文字居中 */
+    text-align: center;
+    /* 下外补丁，控制间距 */
+    margin-bottom: 15px;
+    /* "输入你的账号和密码"的文字之间的间距 */
+    letter-spacing: 2px;
+    /* 文字颜色 */
+    color: #487ed0;
+
+}
+
+/* 表单的上外补丁，控制间距 */
+.container form {
+    margin-top: 35px;
+    margin-left: 80px;
+}
+
+
+/* 设置表单中的input样式 */
+.container .form-group {
+    /* 下外补丁，控制间距 */
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+/* 设置表单中的input样式 */
+.container .form-group .form-control {
+    /* none去除边框设置 */
+    border: none;
+    /* 背景颜色设置为透明 */
+    background-color: transparent;
+
+    /* 设置用户名和密码下边框的样式 */
+    border-bottom: 1px solid rgba(24, 12, 12, 0.651);
+    /* 去除点击边框是提示的边框 */
+    outline: none;
+
+    /* 上内打补丁，控制间距 */
+    padding-top: 10px;
+    width: 100%;
+}
+
+.submit {
+    /* 边框设置为 0 */
+    border: 0;
+    /* 设置背景颜色为渐变色 */
+    background-image: linear-gradient(45deg, #feac5e, #c779d0, #4bc0c8);
+    width: 80%;
+    height: 30px;
+    /* 外上补丁，控制边距 */
+    margin-top: 30px;
+    /* 字体大小 */
+    font-size: 17px;
+    /* 字体颜色 */
+    color: black;
+
+    /* 设置加载速度 */
+    transition: 0.5s;
+
+}
+
+/* 注册样式设置，控制行间距 */
+.container .sign-up {
+    /* 设置加载速度 */
+    transition: 0.5;
+    font-size: 17px;
+    margin-left: 2px;
+
+}
+
+.container a {
+    /* 去掉连接的下滑线 */
+    text-decoration: none;
+    /* 文字颜色 */
+    color: #487ed0;
+}

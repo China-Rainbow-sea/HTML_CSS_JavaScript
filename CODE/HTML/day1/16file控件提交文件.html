@@ -1,0 +1,24 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器的打开的编码,不是该页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file控件提交文件</title> <!-- 页面标题-->
+</head>
+<body>
+    <!-- file 控件提交文件-->
+    <input type = "file"/>
+    <hr color = "red">
+    <br>
+    <form action = "http://localhost:8080/jd/register">
+        <input type = "file" name = "files" /><br> <!--type = "file" 提交文件,name可以提交给服务器-->
+        <input type = "submit" value = "提交"/>
+        <input type = "reset" value = "重置"/>
+
+    </form>
+    <!-- 结果地址栏上
+    http://localhost:8080/jd/register?files=Installer_%E9%A3%9E%E8%BD%ACPDF%E8%BD%AC%E6%8D%A2%E5%99%A8_r1.7.9.exe -->
+    
+</body>
+</html>

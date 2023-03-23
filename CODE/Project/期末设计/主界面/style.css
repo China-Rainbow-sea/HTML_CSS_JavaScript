@@ -1,0 +1,591 @@
+/* 初始化界面 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 标准盒子 */
+    box-sizing: content-box;
+}
+
+
+/* 界面整体布局样式 */
+#content {
+    /*div:contentid选择器*/
+    height: 30%;
+    width: 60%;
+    margin-left: 300px;
+    /* margin-left:左对齐 */
+}
+
+
+/* 页眉部分的大小布局 */
+header {
+    background-image: url(./img/foot1.jpeg);
+    height: 500px;
+    width: 100%;
+
+    /* 多余大小的背景填充*/
+    /* background-image 属性会在元素的背景中设置一个图像,url图片的路径
+    background-repeat 属性设置是否及如何重复背景图像,默认地,背景图像在水平和垂直方向上重复,no-repeat 背景图像将仅显示一次。  
+    background-size使用contain自适应填满div块，cover长宽都拉伸填满
+    background-color : transparent | color  属性设置元素的背景颜色,transparent :背景色透明*/
+}
+
+/* 页眉中链接的布局 */
+nav,
+ul {
+    height: 55px;
+    /* 弹性布局，flex 横向布局 */
+    display: flex;
+    /* 上下垂直居中 */
+    align-items: center;
+    /* 左右水平居中 */
+    justify-content: center;
+}
+
+
+/*页眉列表的设置*/
+nav ul li {
+    /* 去掉无序的标志点 */
+    list-style: none;
+    /* 字体大小 */
+    font-size: 20px;
+    /* 向右打内补丁 */
+    /* padding-right: 38px; */
+    margin-right: 38px;
+    /* 文本居中 */
+    text-align: center;
+}
+
+
+/* 页眉链接的处理 */
+nav a {
+    /* 去除链接的下划线 */
+    text-decoration: none;
+    color: white;
+}
+
+/* 导航栏中，鼠标点击显示的样式 */
+nav a:hover {
+    color: rgb(65, 176, 224);
+    /* :hover 伪类在鼠标移到元素上时向此元素添加特殊的样式。 */
+}
+
+
+/* 满汉楼文字样式 */
+#head_text {
+    /* 相对定位 */
+    position: relative;
+    /* 向左外补丁,控制位置 */
+    margin-left: 150px;
+    margin-top: 80px;
+    font-family: "华文新魏";
+    /* 字体大小 */
+    font-size: 70px;
+    color: white;
+}
+
+/* 登录购餐样式处理 */
+#head_text input {
+    /*input 按钮的设置*/
+    height: 100px;
+    width: 135px;
+    /* 边框的设置,边框的粗细,边框的虚实线,边框的颜色,这里设置没有边框显示 */
+    border: 0px;
+    color: rgb(89, 95, 111);
+    /* 文字大小 */
+    font-size: 30px;
+    /* 文字的粗细 */
+    font-weight: 700;
+    /* 边框,按钮,背景透明 */
+    background-color: transparent;
+    /* background-color : transparent | color  属性设置元素的背景颜色,transparent :背景色透明 
+    或者: background-color: rgba(0, 0, 0, 0.1);按钮定义背景颜色可使用rgba() */
+}
+
+
+/* 设置点击登录购餐时,显示的背景颜色,以及小手 */
+#head_text input:hover {
+    color: rgb(227, 31, 27);
+    /* 鼠标小手 */
+    cursor: pointer;
+
+}
+
+/* 文字用户支持,品质保证整体布局的样式处理 */
+#head_icon {
+    height: 140px;
+    /* 相对定位 */
+    position: relative;
+    /* 顶部外补丁,控制间距 */
+    margin-top: 70px;
+    /* 弹性布局,flex div盒子横向排列不会独占行 */
+    display: flex;
+    /* div盒子水平居中 */
+    justify-content: center;
+}
+
+.icon {
+    height: 100px;
+    width: 100px;
+    /* 右外打补丁,控制间距 */
+    margin-right: 40px;
+}
+
+/* 头部的图片样式处理 */
+.icon img {
+    /* 外补丁:四个参数上右下左 */
+    margin: 10px 20px 0px 30px;
+    /* 图片的透明度 */
+    filter: opacity(0.6);
+    /* 边框的锐度,50%是圆形 */
+    border-radius: 50%;
+
+    /*
+    filter 属性允许您向文本和图像添加更多的样式效果,若需要使用 filter 属性，请始终指定元素的宽度。
+    元素外边距内就是元素的的边框 (border)。元素的边框就是围绕元素内容和内边据的一条或多条线。
+    radius 定义圆弧的圆的半径。
+    filter定义颜色透明度opacity(0.6)值越小越透明,border-radius属性当图片长宽一样时设定50%为圆形 
+    */
+}
+
+/* 文字用户支持,品质保证文字样式处理 */
+.icon p {
+    margin-left: 20px;
+    margin-top: 0;
+    color: white;
+    font-size: 20px;
+}
+
+/* 鼠标点击用户支持,品质保证小手 */
+.icon p:hover {
+    color: red;
+    /* 鼠标小手 */
+    cursor: pointer;
+}
+
+aritcle {
+    height: 1200px;
+    width: 450px;
+    margin-left: 130px;
+    /* 
+    <article> 标签定义外部的内容。
+    外部内容可以是来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。
+    */
+}
+
+
+#content1 {
+    height: 250px;
+    /* 顶部打外补丁控制边距 */
+    margin-top: 20px;
+}
+
+
+#content1_img {
+    height: 100%;
+    width: 220px;
+    /* 左外补丁 */
+    margin-left: 150px;
+    /* 向左浮动 */
+    float: left;
+}
+
+#content1_img .content {
+    height: 25%;
+    /* 字体大小 */
+    font-size: 10px;
+}
+
+#content1_img .img {
+    height: 80%;
+    /* 导入背景图片 */
+    background: url(./img/log.jpg) no-repeat;
+    /* 设置背景图片的大小 */
+    background-size: contain;
+
+    /*
+    background-size: cover;指定背景图像的大小
+    ackground: url(../images/flower1.jpeg) no-repeat:属性，用于在样式表的同一位置设置大多数背景属性,这里是导入图片
+    auto： 背景图像的真实大小。 cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。 contain： 将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。 
+    */
+
+}
+
+#content1_text {
+    height: 100%;
+    width: 220px;
+    /* 左外补丁 */
+    margin-left: 10px;
+    /* 左浮动 */
+    float: left;
+}
+
+
+#content1_text p {
+    /* 文字大小 */
+    font-size: 4px;
+    /* 文字样式 italic斜体*/
+    font-style: italic;
+    color: gray;
+    margin-top: 10px;
+}
+
+#content1_text input {
+    background-color: #E78E87;
+    color: white;
+    /* 字体大小 */
+    font-size: 4px;
+    height: 20px;
+    width: 70px;
+    /* 隐藏边框 none */
+    border: none;
+    /* 边框锐度,50%为圆 */
+    border-radius: 10px;
+}
+
+/* 鼠标点击用户支持,品质保证小手 */
+#content1_text input:hover {
+    color: red;
+    /* 鼠标小手 */
+    cursor: pointer;
+}
+
+
+
+#content2 {
+    margin-top: 30px;
+    height: 300px;
+    /* 文本居中 */
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+#content2 .img {
+    height: 80%;
+    margin-top: 20px;
+    background: url(./img/Canteen.webp) no-repeat;
+    /* 图片居中显示占页面的50% */
+    background-position: 50%;
+}
+
+
+#content3 {
+    height: 150px;
+    /* 上外补丁 */
+    margin-top: 90px;
+}
+
+#comtent3_imgs {
+    /* 上内补丁 */
+    position: relative;
+    padding-top: 10px;
+    height: 100%;
+    width: 100%;
+    /* 弹性布局 flex div盒子横向排列,不会独占行 */
+    display: flex;
+    flex-direction: row;
+    /* 水平居中 */
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: row指定如何将伸缩项放置在伸缩容器中。*/
+}
+
+
+#content3_img {
+    width: 20%;
+    height: 100%;
+    margin-right: 50px;
+}
+
+/*使用结构选择器对同一层div块插入背景*/
+#content3_img:nth-child(1) {
+    background: url(./img/reception.webp) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(2) {
+    background: url(./img/reception2.jpg) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(3) {
+    background: url(./img/reception3.jpg) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(4) {
+    background: url(./img/reception4.jpg) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(5) {
+    background: url(./img/reception5.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+#content4 {
+    margin-top: 30px;
+    height: 300px;
+    /* 文本居中 */
+    text-align: center;
+    /* 文字大小 */
+    font-size: 30px;
+}
+
+#content4 .img {
+    margin-top: 30px;
+    width: 100%;
+}
+
+#content4 img {
+    width: 70%;
+    /* 边框设置 内补丁*/
+    border-radius: 120px 0 0 120px;
+}
+
+
+#content5 {
+    height: 250px;
+    margin-top: 100px;
+}
+
+#content5 #content {
+    /* display: flex; 
+    flex-direction: column; */
+    /* 文字居中 */
+    text-align: center;
+    /* 文字大小 */
+    font-size: 30px;
+    /* 相对定位 */
+    position: relative;
+    /* 外补丁,文字显示居中 */
+    margin-bottom: 50px;
+    margin-left: 250px;
+
+}
+
+
+
+#content5 .img {
+    height: 100%;
+    /* 弹性布局,flex 横向布局,div盒子不会独占行 */
+    display: flex;
+
+    /* flex-direction: row; */
+    /* 水平两端对齐 */
+    justify-content: space-between;
+}
+
+.content5_img {
+    height: 100%;
+    width: 30%;
+
+}
+
+/*使用结构选择器设置样式*/
+.content5_img:nth-child(1) {
+    /* 背景图片 */
+    background: url(./img/Canteen.webp) no-repeat;
+    /* 指定图片大小 */
+    background-size: cover;
+    /* 边框锐度,50%是圆 */
+    border-radius: 0 50px;
+
+    /* 
+    auto： 背景图像的真实大小。 
+    cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。
+    contain： 将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内 */
+}
+
+.content5_img:nth-child(2) {
+    background: url(./img/Canteen2.jpeg) no-repeat;
+    background-size: cover;
+    border-radius: 0 50px;
+}
+
+.content5_img:nth-child(3) {
+    background: url(./img/reception.webp) no-repeat;
+    background-size: cover;
+    border-radius: 0 50px;
+}
+
+
+#content5 .content {
+    height: 50%;
+    /* 弹性布局,flex 横向布局,div盒子不会独占行 */
+    display: flex;
+    /* 水平两端对齐 */
+    justify-content: space-between;
+}
+
+.content5_content {
+    height: 200px;
+    width: 30%;
+
+}
+
+
+.content5_content h5 {
+    margin-top: 20px;
+    /* 外打补丁 */
+    /* margin-bottom: 0; */
+    /* 文字大小 */
+    font-size: 20px;
+}
+
+
+.content5_content p {
+    margin-top: 10px;
+    color: gray;
+    /* 文字大小 */
+    font-size: 15px;
+}
+
+
+.content5_content input {
+    height: 25px;
+    width: 90px;
+    font-size: 6px;
+    color: white;
+    /* 边框不显示 */
+    border: none;
+    background-color: #E78E87;
+    margin-left: 50px;
+    margin-top: 20px;
+    /* 边框的锐度,50%是圆 */
+    border-radius: 15px;
+}
+
+/* 了解更多，鼠标经过小手样式 */
+.content5_content input:hover{
+    /* 鼠标小手样式 */
+    cursor: pointer; 
+    color: red;
+}
+
+
+footer {
+    height: 200px;
+    background-color: #E78E87;
+    color: white;
+    /* 字体大小 */
+    font-size: 6px;
+    /* 相对定位 */
+    position: relative;
+    margin-top: 350px;
+}
+
+
+#footer1 {
+    height: 40%;
+    /* margin-top: 200px; */
+    /* 文本居中 */
+    /* text-align: center; */
+}
+
+/* 控制文字居中 */
+#footer1 p {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+
+/*使用结构选择器设置样式*/
+#footer1 p:nth-child(1) {
+    /* 左浮动 */
+    float: left;
+
+}
+
+#footer1 p:nth-child(2) {
+    float: left;
+}
+
+
+#footer2 {
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* 两个分界线 */
+.order {
+    height: 0px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.order .line {
+    /* 弹性布局,inline-block div盒子以块的形式显示,不会独占行 */
+    display: inline-block;
+    /* 横线的宽度 */
+    width: 200px;
+    /* 边框设置,边框粗细,边框的虚实线样式,边框颜色 */
+    border-top: 1px solid white;
+
+    /*display: inline-block; 对齐方式*/
+}
+
+.order .txt {
+    color: white;
+    /* 文字垂直排列 */
+    vertical-align: -3px;
+
+    /*vertical-align: 影响行内框内的行内级元素生成的行内框的垂直位置。*/
+}
+
+
+#footer_a {
+    /* 外打补丁 */
+    margin-top: 10px;
+    margin-left: 150px;
+}
+
+#footer_a a {
+    /* 去除链接的下划线 */
+    text-decoration: none;
+    color: white;
+    /* 外补丁,两个参数:上下,左右 */
+    margin: 0 20px;
+
+}
+
+/* 页尾导航，鼠标小手样式 */
+#footer_a a:hover{
+    /* 小手样式 */
+    cursor: pointer;
+    color: red;
+}
+
+
+#footer3 {
+    height: 30%;
+    /* 左打内补丁 */
+    padding-left: 250px;
+    display: flex;
+    margin-top: 10px;
+
+}
+
+
+#footer3 .icon {
+    width: 10%;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 35px;
+}
+
+#footer3 img {
+    height: 25px;
+    width: 25px;
+    /* 图片背景的透明度 */
+    filter: opacity(0.8);
+    margin: 0;
+
+    /*
+    filter 属性允许您向文本和图像添加更多的样式效果,若需要使用 filter 属性，请始终指定元素的宽度。
+    filter定义颜色透明度opacity(0.6)值越小越透明,border-radius属性当图片长宽一样时设定50%为圆形 
+     */
+}

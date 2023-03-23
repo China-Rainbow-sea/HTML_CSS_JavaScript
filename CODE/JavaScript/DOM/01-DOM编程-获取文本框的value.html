@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM编程-获取文本框的 value值</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        1.JavaScript 包括三大块:
+            ECMAScript: 表示的是 Javascript 的核心语法（ES规范/ECMA-63标准）
+            DOM： Document Object Model （文档对象模型，对网页当中共的节点进行一个增删改的过程，） HTML文档背被当做一棵DOM树来看待
+            var btnElt = window.document.getElementById("btn");
+            BOM: Browser Object Model （浏览器对象模型） 窗口
+            关闭浏览器窗口，打开一个新的浏览器窗口，后退，前进
+            浏览器地址栏上的url 等，都是 BOM编程。
+            实际上BOM是包含了DOM的 ：因为DOM是在一个浏览器窗口当中的
+            一个DOM树。
+            BOM的顶级对象是: window
+            DOM的顶级对象是: document
+            实际上BOM是包括了 DOM的 。因为DOM也是在该浏览器窗口当中显示的。
+        */
+
+        /*
+        window.onload = function() {
+            var btnElt = document.getElementById("btn");
+            btnElt.onclick = function() {  // 为该变量绑定上事件
+                var userElt = document.getElementById("username");
+                // 注意: 只要有 属性/就算是隐藏的，也可以通过 “.”的方式，点出来.
+                var username = userElt.value;  
+                window.alert(username);
+                // 修改它的 vlaue 值
+                userElt.value = "Hello World";
+            }*/
+        // }
+    
+
+        window.onload = function() {
+            document.getElementById("btn").onclick = function () {
+                document.getElementById("username2").value = document.getElementById("username").value;
+            }
+        }
+    </script>
+    <!-- <input type="button" id="btn" value="hello" /> -->
+    <input type="text" id="username" />  <br>
+    <input type="text" id = "username2"> <br>
+    <!-- <input type = "button" value = "获取文本框的value值" id="btn"> -->
+    <input type="button" id = "btn" value = "将第一个文本框当中的value值赋值到第二个文本框当中去">
+</body>
+</html>

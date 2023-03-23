@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Boolean 类型</title>
+</head>
+<body>
+    <script type="text/javascript">
+    /* javascript 的布尔类型永远只有两个值分别是 true,和 false（这一点和java相同）
+    在Boolean 类型永远中有一个函数叫做: Boolean()
+        语法格式:
+               Boolean(数据)
+        Boolean() 函数的作用是将非布尔类型转换成布尔值类型
+    */ 
+    var username = "jeck";
+
+    if(Boolean(username)) {
+        alert("欢迎你" + username);
+    } else {
+        window.alert("用户不能为空");
+    }
+
+
+    if(username) {
+        window.alert("欢迎你" + username);
+    } else {
+        window.alert("用户不能为空");
+    }
+
+    window.alert("********************************");
+
+    // 规律： 有就转换成 true ，"没有"就转换成 false
+    window.alert(Boolean(1));  // true 
+    window.alert(Boolean(0));  // fasle
+    window.alert(Boolean("")); // fasle
+    window.alert(Boolean("abc")); // true
+    window.alert(Boolean(null)); // false
+    window.alert(Boolean(NaN)); // is not number false
+    window.alert(Boolean(undefined)); // fasle
+    window.alert(Infinity); // infinity
+
+    // 死循环
+    // while( 10 / 3) {
+    //     window.alert("hello")
+    // }
+
+    for(var i = 0; i < 10 ; i++) {
+        window.alert("i = " + i);
+    }
+
+    // Null 类型只有一个值 null
+    window.alert(typeof null) ; // "object"
+
+
+    </script>
+</body>
+</html>

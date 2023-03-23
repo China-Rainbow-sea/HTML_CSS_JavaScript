@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eval函数</title>
+</head>
+<body>
+    <!--
+        JSON是一种行业内的数据交换格式标准：
+        JSON在JS中以JS对象的形式存在。
+    -->
+    <script type="text/javascript">
+        /*
+         eval 函数的作用是:
+            将字符串当做一段javascript 代码解释并执行.
+        */
+       window.eval("var i = 100");
+       window.alert("i = " + i);  // 注意上面当中的 eval 函数当中定义了 var i 的值了。eval()函数当中的内容被当作一段javascript 代码执行了。所以这里可以取出 i = 100
+
+       // java连接数据库，查询数据之后，将数据在java程序中拼接成JSON 格式的“字符串”，将JSON格式的字符串响应到浏览器当中
+       // 也就是Java响应到浏览器上的仅仅是一个“JSON的字符串”，还不是一个json对象
+       // 可以使用eval()函数，将json 格式的字符串转成json 对象.
+       var fromJava = "{\"name\":\"zhangsan\",\"password\":\"123\"}"; // 这是Java程序员给发过来的JSON格式的 “字符串”,注意：“/” 斜杆转义的是 " 分号.
+       // 将以上的JSON格式的字符串转换成json 对象
+       window.eval("var jsonObj = " + fromJava );
+       // 访问json对象
+       window.alert(jsonObj.name + "," + jsonObj.password); // 在前端取数据
+
+
+       /*
+       面试题:
+         在javascript 当中 [] 和 {} 有什么区别
+         [] 是数组
+         {} 是JSON 
+
+         java 中的数组： int[] arr = {1,2,3,4,5}
+         Javascript的数组: var arr = [1,2,3,4,5];
+         JSON: var jsonObj = {"email" : "zhangsan@123.com","age" : 25};
+       */
+
+       var json = {
+        "username" : "zhangsan"
+       };
+
+       // JS中访问json对象的属性
+       window.alert(json.username);
+
+       // JS中访问json对象的属性
+       window.alert(json["username"]);
+
+
+    </script>
+</body>
+</html>

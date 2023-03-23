@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取文本框中value的内容</title>
+</head>
+    <script type="text/javascript">
+        function getUsername() {  // function函数关键字
+            // 通过id获取文本框的对象
+            var usernameElt = document.getElementById("username")
+            // 通过获取到的对象"."出对应的属性
+           var username =  usernameElt.value
+           window.alert(username)
+
+           usernameElt.type="checkbox"// 改为复选框 
+           // 还可以重新赋值
+           usernameElt.value="动力节点"
+           /*
+           在js当中获取了一个节点对象之后，这个标签中有什么属性，这个节点对象就能“点”什么。(包括隐藏的)什么事件句柄等等
+           例如:
+           第一种 input 标签有value属性，那么就可以inputobj.value // 获取value的值
+           第二种 inputobj.value="数据" // 赋值设置value
+           */
+
+           // 也可以整合在一起
+           document.getElementById("text3").value="呵呵"
+
+        }
+    </script>
+<body>
+    <input type="text" id="text3" />
+    用户名<input type="text" name="username" id="username" />
+    <input type="button" value="获取用户名" onclick="getUsername()" />
+</body>
+</html>

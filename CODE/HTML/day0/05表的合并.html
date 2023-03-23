@@ -1,0 +1,270 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en"> <!-- 根-->
+<head>  <!-- 头-->
+    <meta charset="UTF-8">  <!-- 浏览器打开页面的编码格式,不是该页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表的合并</title> <!-- 页面标题-->
+</head>
+<body>  <!-- 体-->
+    <!-- 表格的行合并,先删除下面的,再使用 rowspan 表示合并的行数-->
+    <table border = "1px" width = "60%" height = "150px">
+    <!-- border 表示表格的边框大小 1 px 像素
+         width  表示表格的宽度 百分比
+        height 表示表格的高度 px像素-->
+        <!-- 下面演示错误合并表行，没有删除列数,直接合并的话会导致溢出-->
+        <tr> <!-- 第一行-->
+            <td>a</td>
+            <td>b</td> <!-- 该行分列(td的个数),并赋值-->
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <td rowspan = "2">g</td> <!-- rowspan 合并的行数-->
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>y</td>
+            <td>z</td>
+        </tr>
+    </table> 
+    <br>
+    <hr color = "black">
+    
+
+
+    <!-- 删除下面一列合并，正确演示-->
+    <table border = "1px" width = 60% >
+        <tr> <!-- 第一行-->
+            <td>a</td> 
+            <td>b</td> <!-- 该行分列(td的个数),并赋值-->
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <td rowspan = "2">g</td> <!-- rowspan = 2 合并的行数-->
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>y</td>
+            <!-- 删除 <td>z</td>这一列合并-->
+        </tr>
+    </table>
+    <br>
+    <hr color = "black">
+
+
+
+    <!-- 删除上面列,在合并行数,没有效果只是把其中一列去了,并没有合并在一起-->
+    <table border = "1px" width = "50%">
+        <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <!--<td>g</td>  删除该行-->
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>y</td>
+            <td rowspan = "2">z</td> <!-- 合并 2 行-->
+        </tr>
+
+    </table>
+    <br>
+    <hr color = "blue">
+
+
+
+
+    <!-- 合并三行-->
+    <table border = "1px" width = 50%>
+        <tr>
+            <td>a</td>
+            <td>b</td>
+            <td rowspan = "3">c</td> <!-- rowspan 合并三行-->
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <!--<td>g</td> 合并三行删除该列-->
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>y</td>
+            <!--<td>z</td> 合并三行删除该列 -->
+        </tr>
+    </table>
+    <br>
+    <hr color = "blue">
+
+
+
+    <!-- 合并三行,取中间，不可以会溢出-->
+    <table border = "1px" width = 50%>
+        <tr>
+            <td>a</td>
+            <td>b</td>
+            <!--<td >c</td> 合并三行删除该列-->-->
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <td rowspan = "3">g</td> 
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>y</td>
+            <!--<td>z</td> 合并三行删除该列 -->
+        </tr>
+    </table>
+    <!-- 表格合并行，
+    1.先删除多余的列(删除下面的,就是定义 rowspan 为列的后面的)
+    2.设置合并的行数-->
+
+
+
+    <!-- 合并表格列,colspan 
+       合并表格列,没有删除哪个都可以,因为都是在同一行上的-->
+    <!-- 删除后面的列数,合并表列-->
+    <hr color = "blue">
+    <br>
+    <table border = "1px" width = "50%">
+        <!-- border = 1px 表格的边框 width 表格的宽-->
+        <tr>  <!-- 第一行 -->
+            <td>a</td>
+            <td>b</td> <!-- 该行的分列(td的个数),并赋值-->
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+        </tr>
+        <tr>
+            <td>x</td>
+            <td colspan = "2" align = center>y</td> <!-- colspan 合并 2列,align = center 居中显示-->
+            <!--<td>z</td>  合并 2列删除该列>-->
+        </tr>
+    </table>
+    <br>
+    <hr color = "blue">
+
+
+
+    <!-- 表格合并列数,删除上面的列数演示-->
+    <table border = "1px" width = "50%"> <!-- 表格标签-->
+        <tr> <!-- 第一行-->
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+        </tr>
+        <tr>
+            <td>x</td>
+            <!-- <td>y</td> 合并两列删除该列合并-->
+            <td colspan = "2" align = center>z</td> <!-- colspan 合并列 两列 align = center 居中显示-->
+        </tr>
+    </table>
+    <hr color = "blue">
+    <br>
+
+
+    <!-- 合并三列演示-->
+    <table border = "1px" width = "60%"> <!-- table 表格标签, border 表边框的大小,width 表的宽度-->
+        <tr> <!-- 第一行-->
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+        </tr>
+        <tr>
+            <td colspan = "3" align = center>x</td> <!-- colspan 合并三列,align = center 显示居中-->
+            <!-- <td>y</td>
+            <td>z</td> 合并表三列,删除这两列-->
+        </tr>
+    </table>
+    <hr color = "blue">
+    <br>
+
+
+
+    <!-- 表格中的 <th> 标签
+         th 就是比 td 多的是 居中了，加粗了,一般在表的开头使用-->
+    <table border = "1px" width = "60%"> <!-- table 表格标签,border 表边框,
+    width 表的宽度百分比-->
+        <tr> <!-- 第一行-->
+            <th>居中,员工编号</th>
+            <th> 加粗了,员工薪资</th> <!-- 加粗,居中,开头使用-->
+            <th> 开头,部门名称</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>100000</td> <!-- 赋值就是上面一个行对齐分列下来的-->
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>9999</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>1000000</td>
+            <td>IT</td>
+        </tr>
+    </table>
+    <hr color = "black">
+    <br>
+
+
+    <!-- 表格<table>中的 thead 表头 tbody 表体 tfoot 表脚
+     ,在 <table>中不是必须的,只是这样做便于后期的 js代码的编写,-->
+    <table border = "1px" width = "60%"> <!-- table 表的标签,border表的边框
+     width 表的宽度-->
+     <thead> <!-- 表头 与 head 类似-->
+        <tr> 
+            <th>员工编号</th>
+            <th>员工薪资</th>
+            <th>员工部门</th>
+        </tr>
+    </thead>
+    <tbody>  <!-- 表的体-->
+        <tr>
+            <td>100</td>
+            <td> 9999</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>100000</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>10000000</td>
+            <td>IT</td>
+        </tr>
+    </tbody>
+    <tfoot> <!-- 表脚-->
+        <tr>
+            <th colspan = 3 align = center>结束</th>
+        </tr>
+    </tfoot>
+    </table>
+
+</body>
+</html>

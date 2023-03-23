@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器编码格式,不是页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hidden的作用</title> <!-- 页面标题-->
+</head>
+<body>
+    <!--hidden 中的作用
+    隐藏域，网页上看不到，但是表单提交的时候，数据会自动提交给服务器，主要用于节省页面的空间布局可以配合 post 使用,同样 的 F12查看源代码可以看到-->
+    <form action = "http://localhost:8080/oa/save">
+        <input type = "hidden" name = "userid" value = "111"/><br>
+        <input type = "text" name = "username" /><br>
+    
+        <hr color = "blue">
+        <inptu type = "hidden" type = "text"  name = "text"/> <!-- 不要这么用-->
+        <input type = "submit" value = "提交"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type = "reset"  value = "重置"/>
+    </form>
+    <!-- 结果地址栏
+    http://localhost:8080/oa/save?userid=111&username=RainbowSea 
+     userid 表示的是 name
+      111 表示的是 value-->
+</body>
+</html>

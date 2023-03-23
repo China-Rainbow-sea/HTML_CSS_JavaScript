@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过读取JSON对象属性,设置table表单的tbody.html</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 创建JSON对象
+        var data = {
+            "total" : 4,
+            // JSON 数组
+            "emps" : [
+                {"empno":7369,"ename" : "SMITH","sal":80000},
+                {"empno":7369,"ename" : "SMITH","sal":80000},
+                {"empno":7369,"ename" : "SMITH","sal":80000},
+                // 多个值使用 "," 逗号分隔
+                {"empno":7369,"ename" : "SMITH","sal":80000}  // 结尾不用任何符号.
+
+            ]
+        }
+
+        // 希望把数据展示到table 当中
+        window.onload = function () {
+            var displayBtnElt = document.getElementById("displayBtn");
+            displayBtnElt.onclick = function () {
+                var emps = data.emps;  // 获取到JSON类型当中嵌套的JSON类型的数组
+                var html = "";
+                for(var i = 0; i < emps.length; i++) {
+                    var emp = emps[i];
+                    // 拼接成一个表单的形式，在html 中显示
+                    html += "<tr>";  // 字符串的拼接
+                    html += "<td>" + emp.empno + "</td>"; // 获取到该 json 类型当中定义的empno类型
+                    html += "<td>" + emp.ename + "</td>";
+                    html += "<td>" + emp.sal + "</td>";
+                    html += "</tr>";
+                }
+
+                // 将上述拼接的内容通过 .innerHTML 显示到浏览器页面当中
+                document.getElementById("emptbody").innerHTML = html;
+                document.getElementById("count").innerHTML = data.total;
+            }
+        }
+
+    </script>
+    <input type="button" value="显示员工信息列表" id="displayBtn" />
+    <h2>员工信息列表</h2>
+    <hr>
+    <table border="1px" width="50%">
+        <tr>
+            <th>员工编号</th>
+            <th>员工名字</th>
+            <th>员工薪资</th>
+        </tr>
+        <tbody id="emptbody">
+            
+        </tbody>
+        
+    </table>
+    总共<span id="count"></span>条数
+</body>
+</html>

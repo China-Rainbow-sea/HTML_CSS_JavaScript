@@ -1,0 +1,58 @@
+<!DOCTYPE html> <!--html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!--浏览器打开格式的编码,不是本地页面的编码设定-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有序列表</title> <!-- 页面的标题-->
+</head>
+<body>
+    <ol>
+        <li> A </li>
+        <li> B </li>
+        <li> C </li>
+    </ol>
+    <br>
+    <hr color = "green">
+
+    <!-- 有序列表可以嵌套-->
+    <!-- <ol></ol> 表示有序列表,一个 ol 表示一个有序列表级,li 表示列表赋值-->
+    <ol>
+        <li> 水果
+            <ol>
+                <li> 苹果</li>
+                <li> 西瓜</li>
+                <li> 桃子</li>
+            </ol>
+        </li>
+        <li> 蔬菜
+            <ol>
+                <li>西红柿</li>
+                <li>白菜</li>
+            </ol>
+        <li> 甜点 </li>
+    </ol>
+    <br>
+    <hr color = "red">
+
+
+    <!-- 有序表中可以使用 type 定义序列的格式-->
+    <ol type = "A">
+        <li> 水果
+            <ol type = "i">
+                <li> 苹果</li>
+                <li> 西瓜</li>
+                <li> 桃子</li>
+            </ol>
+        </li>
+        <li> 蔬菜
+            <ol type = "I">
+                <li>西红柿</li>
+                <li>白菜</li>
+            </ol>
+        </li>
+        <li> 甜点</li>
+    </ol>
+
+</body>
+</html>

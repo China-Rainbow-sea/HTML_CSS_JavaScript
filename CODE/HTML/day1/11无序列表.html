@@ -1,0 +1,74 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开的编码格式,不是本页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无序列表</title> <!-- 页面的标题-->
+</head>
+<body>
+    <!-- <u1></ul> 无序列表-->
+    <ul>  <!-- 定义无序列表-->
+        <li> 中国 </li>
+        <li> 美国 </li>  <!-- 列表数据-->
+        <li> 日本 </li>
+    </ul>
+    <br>
+    <hr color = "blue">
+    
+
+    <!-- 无序列表多次嵌套,一个ul 就表示一个列表-->
+    <ul>
+        <li>中国
+            <ul>
+                <li> 北京 </li>
+                <ul>
+                    <li>朝阳区</li>
+                    <li> 东城区</li>
+                    <li>西城区</li>
+                    <li>海锭区</li>
+                </ul>
+            </ul>
+        </li>
+        <li>美国
+            <ul>
+                <li>纽约</li>
+            </ul>
+        </li>
+        <li>英国
+            <ul>
+                <li>伦敦</li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <hr color = "blank">
+
+
+    <!-- 可以指定无序列表中的标号 type = "square" 方格 type = "disc" 实圆 type "circle " 空心圆-->
+    <ul type ="circle"> <!-- circle 表示无序标号 空心圆-->
+        <li>中国
+            <ul type = "square"> <!-- square 表示无序标号 方格-->
+                <li> 上海
+                    <ul type = "disc"> <!-- disc 表示无序标号 实圆-->
+                        <li>浦东新区</li>
+                        <li>黄浦区</li>
+                        <li>闵行区</li>
+                        <li>嘉定区</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li> 美国 
+            <ul type = "disc">
+                <li>纽约</li>
+            </ul>
+        </li>
+        <li> 英国
+            <ul type = "square">
+                <li>伦敦</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

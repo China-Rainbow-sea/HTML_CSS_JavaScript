@@ -1,0 +1,25 @@
+table{    /*标签选择器,作用范围大,为该标签的都会被赋予属性,每个属性使用分号隔开*/
+    width:50%;   /*宽百分比,根据页面大小变化*/
+    font-size:20px;  /* font-size 指示字形与字体之间所需的高度*/
+    table-layout:fixed; /* table-layout 控制用于布局表单元格、行和列的算法固定布局的算法。fixed;在这算法中，水平布局是仅仅基于表格的宽度，表格边框的宽度，单元格间距，列的宽度，而和表格内容无关 
+    */
+    empty-cells:hide;; /*empty-cells:设置或检索当表格的单元格无内容时，是否显示该单元格的边框,show(显示) hide(隐藏)*/
+    border-collapse:separate;; /*border-collapse:设置或检索表格的行和单元格的边是合并在一起还是按照标准的HTML样式分开。 separate : 边框独立（标准HTML）collapse相邻边被合并 */
+    margin:0 auto; /* margin:检索或设置对象四边的外延边距。auto:值被设置为相对边的值*/
+    border:1px solid black; /* border表格参数*/
+    color:rgb(6, 1, 1);  /*表格中的字体颜色*/
+    
+}
+
+
+tr:nth-child(even){ /* nth-child(even)定义所有偶数行的背景颜色*/
+    background-color:#7cd089;
+}
+
+tr:nth-last-child(odd){ /* nth-last-chile(odd) 定义所有奇数行的背景颜色*/
+    background-color:#a399c9;
+}
+
+th{
+    background-color:bisque
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开的编码格式,不是本身页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form表单method属性</title> <!-- 页面的标题-->
+</head>
+<body>
+    <!-- form 表单 method 属性
+    get : 采用get 方式提交的时候，用户提交的信息会显示在浏览器的地址栏上
+    post : 采用post 方式提交的时候,用户提交的信息不会显示在浏览器地址栏上，当用户提交的信息中含有敏感信息，例如：密码，建议采用post方式提交
+    method : 属性不指定，或者指定get，这两种情况下都是 get 只有当method 属性指定为
+     post 的时候，才是 post 情况-->
+     <form action ="http://localhost:8080/jd/register"> <!-- 不写method默认是get-->
+        用户名 <input type ="text" name = "username" /><br>
+        密码 <input type ="password" name ="pword"/><br>
+        <input  type ="submit" value ="登录" />
+        &nbsp;&nbsp;&nbsp;
+        <input type ="reset" value ="重置"/>  <!-- submit reset 在form 表单中才有效果-->
+     </form>
+     <!-- 结果地址栏，将提交的数据显示到了地址栏上了
+    http://localhost:8080/jd/register?username=111&pword=000 -->
+     <hr color ="blue">
+     <br>
+
+     
+     <!--在 form 中添加上 method = post-->
+     <form action = "http://localhost:8080/js/register" method = "post">
+        <!--将表单中的数据提交到 localhost服务器的8080端口的软件中,post 提交的信息不在浏览器中的地址栏上显示-->
+        用户名 <input type ="text" name ="username"/><br>
+        密码 <input type = "password" name = "userpwrd"/><br>
+        <input type = "submit" value = "登录"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type = "reset" value = "重置"/>
+        <!-- submit reset 只有在form表单中才有效果-->
+     </form>
+    <!-- 结果地址栏，没有将提交的数据到地址栏上
+    http://localhost:8080/js/register -->
+    <hr color = "blank">
+    <br>
+
+
+
+    <!-- 在form表单中添加上 methe  = get 在地址栏上显示提交的信息-->
+    <form action = "http://localhost:8080/js/register" method = "get">
+        <!-- 将form 表单中的数据提交到 localhost这个服务器的8080端口的软件上,method = ”"get" 将提交的信息在地址栏上显示出来-->
+        用户名 <input type = "text" name = "username"/><br>
+        密码<input  type = "password" name = "userpword"/><br>
+        <input type = "submit" value = "登录"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type = "reset" value = "重置"/>
+        <!-- submit 和 reset 只有在 form 表单中才有效果-->
+
+    </form>
+    <!-- 结果地址栏的显示
+    http://localhost:8080/js/register?username=66&userpword=666 -->
+
+    <!-- post 提交的的时候，提交的数据格式和 get 还是一样的 ,action(URL)name=value&name=value&..，只不过不再地址栏上显示出提交的数据信息了,-->
+
+    <hr color = "red">
+    <br>
+      <!-- 不要嵌入空格,不好读取-->
+    <a href = "http:localhost:8080/oa/save?username=zhangsan&passwore=111">测试</a>
+    <!-- 结果地址栏上
+    http://localhost:8080/oa/save?username=zhangsan&passwore=111
+   超链接也可以提交数据给服务器，但是不同的是超链接提交的数据都是固定不变的,超链接是get请求(提交的信息会在地址栏上显示),不是post 请求-->
+
+</body>
+</html>

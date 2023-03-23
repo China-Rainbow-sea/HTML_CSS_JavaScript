@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML中嵌入javaScirpt的第一种方式</title>
+</head>
+<body>
+    <!--
+        1.要实现的功能：
+        用户点击以下按钮，弹出消息框
+        2.javaScript 是一门面向事件驱动型的编程语言，依靠事件去驱动,然后执行对应的程序，
+        在js中有很多事件，其中有一个事件叫做：鼠标单击事件: 
+        3. onclick = js 代码 执行原理是什么？
+        页面打开的时候，js代码并不会执行，只是把 这段js代码注册到按钮的 click 事件上了.
+        只有当触发了对应的事件，才会执行其中的javasciprt ，比如：如下等这个按钮发生click 事件之后，注册
+        在onclick 后面的 js代码会被浏览器自动调用.
+
+        4.怎么使用js代码弹出消息框
+        在JS 中有一个内置的对象叫做 window 全部小写，可以直接拿来使用，window 代表的是浏览器对象
+        windows 对象中一个函数叫做 alert ，用法是 window.alert("消息")： 这样就可以弹窗了》
+
+        5.Javascipet 中的字符串可以使用 双引号 ,也可以使用单引号. 
+        6.但是：重点:  javascipet 中的一条语句结束之后可以使用分号";" 也可以不使用分号结尾
+        7.注意：javasciptet 中的字符内容，不可以使用两个双引号 嵌套住的，必须是单双引号结合使用的
+        
+
+    -->
+    <input type="button" value="hello" onclick="window.alert('hello Javascipet')"/> 
+    <input type="button" value = "hello2" onclick='window.alert("你好世界")'  />
+
+    <!-- 可以嵌套多个 window.alert()消息框信息-->
+    <!--注意： alert有阻塞当前页面加载的作用(阻挡，直到用户点击确定按钮)-->
+    <input type="button" value="hello3" onclick="window.alert('张三')
+                                                    window.alert('李四')
+                                                    window.alert('王五') "/>
+
+
+    <!-- window 这个类名是可以省略不写的。-->
+    <input type="button" value="hello4" onclick="alert('张三')
+                                                alert('李四')
+                                                alert('王五')">
+</body>
+</html>

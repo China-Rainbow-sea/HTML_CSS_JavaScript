@@ -1,0 +1,95 @@
+<!DOCTYPE html> <!-- 表示html5.0-->
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开的编码字符集-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html中引入css样式的第二种方式:样式块</title>
+    <!-- 在head标签中使用 style块,这种方式被称为 样式块方式
+    语法格式如下：
+    <head>
+        <style type ="text/css">
+            选择器 {
+                样式名:样式值
+                样式名:样式值
+                .......
+            }
+            选择器 {
+                样式名:样式值
+                样式名:样式值
+                ........
+            }
+
+            可以有多个选择器:标签选择器，id选择器,.类选择器
+        </style> 这是固定的
+    -->
+
+    <style type ="text/css"> /*这是 css样式块*/
+    /* 这是在 css中的注释*/
+    /*
+    id选择器
+    语法格式
+    #id名 {
+        样式名:样式值;
+        样式名:样式值;
+        ............
+    }
+    */
+    #usernameErrorMsg{    /* 只有当id为这个的标签才可以拥有这个配置,注意id是唯一的不可以重复*/
+        color:lawngreen;  /* 字体的样式*/
+        font-size:12px;  /* 注意每个样式值使用分号隔开*/
+    }
+
+    /*
+    标签选择器,标签选择器的作用范围为 id选择器广
+    语法格式  
+    标签名{  只要是为这个标签的都被设置为了如下值
+        样式名:样式值;
+        样式名:样式值;
+        样式名:样式值;
+    }
+    */
+    div{ 
+        background-color:black;
+        border:3px solid red;  /* 注意每个样式值使用分开隔开,边框设置*/ 
+        width:100px;
+        height:100px; 
+    }
+
+    /*
+    .类选择器
+    语法格式:
+    .类名{  class定义同一个类名的标签，才可以使用如下css配置
+        样式名:样式值;
+        样式名:样式值;
+        样式名:样式值;
+        ............
+    }
+    */
+    .student{
+        border:2px solid blue;
+        width:300px;
+        height:100px;  /* 注意每个样式值使用分号隔开*/
+    }
+
+
+    </style>
+</head>
+<body>   <!-- 这个id配置的 css是字体的样式-->
+    <span id ="usernameErrorMsg">
+        对不起,用户名不能为空
+    </span>
+
+    <div></div>
+    <div></div> <!--语句块-->
+
+    <br><br><br>
+    <!-- class 相同的标签可以认为是同一类标签-->
+    <input type="text" class ="student"/> <!-- class定义类名-->
+    <br><br><br>
+    <select class ="student">
+        <option>专科</option>
+        <option>本科</option>
+    </select>
+</body>
+</html>

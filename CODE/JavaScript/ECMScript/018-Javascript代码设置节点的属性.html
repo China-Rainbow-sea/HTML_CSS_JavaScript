@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>018代码设置节点的属性</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById("btn").onclick = function () {
+                var mytext = document.getElementById("mytext");
+                // 一个节点对象中只要有的属性都可以 "."
+                mytext.type = "checkbox"; // 注意: 只要属性有的都可以，通过 "." 方式点出来的。就算隐藏了也是可以被点出来的. 
+            }
+        }
+    </script>
+
+    <input type="text" id = "mytext" />
+    <input type="button" value = "将文本框修改为复选框" id="btn" />
+</body>
+</html>

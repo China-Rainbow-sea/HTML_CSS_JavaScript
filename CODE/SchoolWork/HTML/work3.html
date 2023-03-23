@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">   <!-- 表示浏览器打开的编码字符格式格式，不是设置本页面的编码字符-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第六题</title>
+</head>
+<body>
+    <form action = "http://localhost:8080/oa/work/" >
+        <!-- action 表示将表单中的数据提交到,localhost服务器中对应的8080端口的软件中-->
+        <table align = "center"> <!-- align 表格居中center -->
+            <tr>
+                <th> 下拉框</th> <!--加粗,居中-->
+                <td>       <!-- 注意不可以加逗号-->
+                    <select name = "selectd" multiple = "multiple" size = 4>
+                        <!-- name 表单提交数据: aciton(url)name=value&name=value...
+                        mulitple 下拉框多选,需要按住ctrl才可以,size 下拉框一次显示的个数-->
+                        <option value = "fujian">福建省</option>
+                        <option value="jiangxi" selected >江西省</option> <!--selected 默认选中-->
+                        <option value="hebei">河北省</option>
+                        <option value="guangdong">广东省</option>
+                        <option value="henan">河南省</option>
+                        <option value="hebei">河北省</option>
+                        <!--注意 后面中的 福建省，江西省并不会将该数据提交给服务器，需要自己定义其中各自的选项中的 value值提交的数据-->
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr align = "center"> <!-- 该行的数据居中-->
+                <td>
+                    <input type ="submit" value="提交"/>
+                    &nbsp;&nbsp;&nbsp;<!--空格-->
+                    <input type = "reset" value="重置"/>
+                    <!-- 注意 submit,reset 只有在表单from 中才有效果-->
+                </td>
+
+            </tr>
+            
+        </table>
+
+    </form>
+    
+</body>
+</html>

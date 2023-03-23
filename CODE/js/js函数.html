@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js函数</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        关于Javascript中的方法
+        javascript 是一种弱类型的语言
+        javascript 中不叫做方法，叫做函数funciton
+        -- js 中定义函数 使用function 关键字
+        function 函数名（形式参数列表）{
+            函数体
+        }
+        */
+       // 例如
+       function sum(a,b) {
+
+       }
+
+       // js函数不需要指定返回值类型,因为可以返回任何类型的数据
+       // js的函数形式中参数列表也不需要指定数据类型,因为js是弱类型的语言
+       
+       function hello() {
+        window.alert("hello world")
+
+       }
+       // js中的函数定义之后,必须手动调用才能执行,不调用是不会执行的,
+       // 函数的声明，是优先级最高的
+
+       hello() // 调用函数
+
+       function sum(a,b) {
+         console.log(a+b);
+       }
+
+       sum();
+       sum(1)  // 在js当中一个函数可以当做多个函数调用,js的代码是非常灵活的
+       sum(1,2)
+       sum(1,2,3)
+
+       sayHello=function(username) {  // 匿名函数赋值给了 sayHello这个函数
+        console.log("welcome: "+username)
+       }
+    </script>
+    <input type="button" value="hello" onclick="hello()" /> <!-- 点击事件只有触发事件才会调用函数-->
+    <input type="button" value="hello2" onclick="sum(1,2)" />
+
+    <input type="button" value="hello3" onclick="sayHello('lucy')" />
+
+    
+
+    
+</body>
+</html>

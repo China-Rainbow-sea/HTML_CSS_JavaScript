@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript代码捕捉回车键</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            var usernameElt = document.getElementById("username");
+
+            /*usernameElt.onkeydown = function(a,b,c) {
+
+                // 获取的是a,b,c是键盘对象
+                window.alert(a);
+                window.alert(b);
+                window.alert(c);
+
+            } */
+            usernameElt.onkeydown = function(event) {
+                // 获取到键值
+                // 对于键盘的事件对象来说，都可以使用 keyCode 属性来获取键值:
+                // 空格是 32 
+                // 回车键的健值是 13 
+                // window.alert(event.keyCode);
+                if(event.keyCode == 13) { // 判断回车键
+                    window.alert("正在进行验证");
+                }
+            }
+            
+        }
+
+        // 张三程序员写了这样一个函数
+        function sum() {
+            window.alert("sum excete.......");
+        }
+
+        // 李四程序员调用sum函数
+        // sum("hello world");
+    </script>
+
+    <input type="text" id="username" />
+</body>
+</html>

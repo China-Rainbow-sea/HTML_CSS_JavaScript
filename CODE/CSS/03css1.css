@@ -1,0 +1,10 @@
+a {   /* 标签选择器,所有 a标签都会得到如下配置*/
+    text-decoration:none; /* 分号分隔,none 无修饰*/
+}
+
+#baiduSpan { /* id选择器,只有为该id 的标签才有效,id是唯一的*/
+    text-decoration: underline; /*添加下滑线*/
+    cursor:pointer;/*cursor表示鼠标样式, pointer是小手*/
+    /*cursor:hand;*/
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复杂一些的JSON对象</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var user = {
+            "usercode" : 110,
+            "username" : "张三",
+            "sex" : true,
+            // 注意这里：JSON 中在定义 JSON类型
+            "address" : {"city" : "北京","street":"大兴区","zipcode" :"12221212"},
+            // 一个包含数组的 JSON 类型
+            "aihao" : ["smoke","drink","tt"]
+        };
+
+        // 访问人名以及居住的城市,注意是：两个".".因为是从JSON类型当中再嵌入JSON类型的数据
+        window.alert(user.username + "居住在" +user.address.city)
+
+        // 请自行设计JSON格式的数据，这个JSON格式的数据可以描述整个班级中每一个学生的信息，以及总人数信息
+        var jsonData = {
+            "total" : 3, // 总人数
+            // JSON 数组
+            "student" : [
+                {"name" : "zhangsan","birth" : "198-10-20"},
+                {"name" : "lisi","birth":"1981-10-9"},  // "," 多个值，逗号分隔
+                {"name" : "wangwu","birth":"1982-10-9"} // 最后一个不用分隔
+            ]
+        }
+
+        window.alert(jsonData.total + "," + jsonData.student[1].name + ","+jsonData.student[1].birth);
+
+    </script>
+    
+</body>
+</html>

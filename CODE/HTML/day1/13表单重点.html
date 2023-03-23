@@ -1,0 +1,246 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--浏览器打开的编码格式,不是本页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单重点</title>
+    <!--页面的标题-->
+</head>
+<!-- 1.表单有什么用
+   收集用户信息，表单展现之后，用户填写表单，点击提交按钮，提交数据给服务器
+  2. 怎么画一个表单
+  使用 form 标签画表单
+  3. 一个网页当中可以有多个表单form
+  4.表单最终是需要提交数据给服务器的
+  form 标签有一个 action 属性，这个属性用来指定服务器地址,指明我们把数据提交到哪个服务器中
+  action 属性和超链接中的 href 属性一样，都可以向服务器发送请求(request) 将表单中
+  的数据发送格 xxx 服务器中
+-->
+
+<body>
+
+    <form action="http://localhost:8080/oa/save">
+        <!--表示将表单中的数据提交到 localhost 这个服务器中的8080端口的软件中-->
+
+        <!-- 画一个提交按钮,这个按钮可以提交表单中所有的数据,给指定的服务器中
+    画一个按钮可以使用 input 输入域，type = "submit" 的时候表示该按钮是一个提交按钮,具有提交表单的能力,该按钮不需要向服务器提交数据,不用name-->
+        <!-- 注意没有写 name 是不会将数据提交给服务器的-->
+
+        <br>
+        <!-- 下面这个是普通的按钮(type = "button")没有提交数据的作用,一个装饰品-->
+        <input type="button" /><br>
+        <input type="text" /> <!-- text 文本框--><br>
+        <input type="password" /> <!-- 密码框--> <br>
+        <input type="reset" /> <!-- reset 表示表单中的清空按钮,该按钮只有在form 表单中才有效-->
+        <input type="submit" /> <!-- submit 表示提交表单中的数据给服务器,该按钮只有在表单 form 中才有效-->
+        <input type="button" /> <!-- button 表示一个普通的提交按钮,就算是在form 中也是不会提交数据给服务器的-->
+    </form>
+    <br>
+    <hr color="blue">
+
+
+
+    <!-- value 在 buton submit reset 表示设置按钮上显示的提示信息
+     submit 默认是 显示提交-->
+    <form action="http://www.192.168.111.3:800/oa/save">
+        <!-- 将表单中的数据提交到 192.168.111.3这个服务器中8080端口的软件中-->
+        <input type="submit" value="注册" />
+        <!--在页面中提示这是一个注册按钮-->
+        <input type="button" value="普通按钮" /> <!-- 在页面中提示这是一个普通的按钮-->
+        <input type="reset" value="清空" /> <!-- 在页面中提示这是一个清空的按钮-->
+
+    </form>
+    <hr color="red">
+    <br>
+
+
+    <form action="http://www.baidu.com">
+        <input type="text" />
+        <input type="submit" value="百度">
+    </form>
+
+    <!-- 下面这两个是一样的,一个是按钮和一个普通的链接没有什么区别
+      超链接和表单都可以向服务器发送请求(request) ,只不过表单发送请求的同时可以携带数据-->
+    <form action="http://www.baidu.com">
+        <input type="submit" value="百度" />
+    </form>
+    <a href="http://www.baidu.com"> 百度 </a>
+    <hr color="res">
+    <br>
+
+    <form action = "http://localhost:8080/jd/login">
+        用户名 <input type = "text"/><br>
+        密码 <input type = "password"/><br>
+        <input type = "submit" value = "登录"/>  <!-- 只有在form 表单中才有效-->
+        &nbsp;&nbsp;&nbsp; <!--空格-->
+        <input type = "reset" value = "重置"/><!-- reset 重置只有在form表单中才有效-->
+    </form>
+    <hr color = "blue">
+    <br>
+
+
+
+    <!-- 可以附加到表中，使其更加美观-->
+    <form action="http:localhost:8080/jd/login"> <!-- 将表单中的数据提交到 http:localhost这个服务器的8080端口的软件中去-->
+        <table> <!-- 表格的标签-->
+            <tr> <!-- 第一行-->
+                <th>用户名</th>  <!-- th 加粗，居中,-->
+                <td><input type = "text"/></td>
+            </tr>
+            <tr><!-- 第二行-->
+                <th>密码</th>
+                <td><input type = "password"/></td>
+            </tr>
+            <tr align = "center"> <!-- 该行的数据居中-->
+                <td colspan = "2"><input type = "submit" value="登录"/> <!-- colspan = 2 合并表列-->
+                &nbsp;&nbsp;&nbsp;
+                <input type = "reset" value = "重置"/>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+    <hr color = "blank">
+    <br>
+
+
+
+    <!-- 
+    表单时以什么格式提交数据给服务器的
+    http://localhost:8080/jd/login/? name=value&name=value&name=value&name=value$...
+    格式是: action(URL)name=value&name=value&name=value&name=value&...的格式
+    这是 Wc3 HTTP协议(应用层)规定的,必须以这种格式提交服务器才可以,
+    其中的 name(就是类似于变量名)=value(就是你提交的数据)&与上其他的数据
+    重点强调:表单编写了 name 属性的才会将数据提交给服务器,没有name 是不会提交给服务器的
+    所以,如果你不想将这项数据提交给服务器就不要写上 name 属性
+    注意在文本框和密码框的 value 不需要写,你输入的内容就是 value 值(你提交的数据)
+    如果你写了,就是在文本框中默认显示了,你写在 value 中的内容
+    当是当你 value 没有写的时候,可以将数据提交给服务器,其中 value的值默认是空字符串""，
+    会将空字符串提交给服务器,java 代码得到 String s = "",Stirng usetname = ""，注意不是NULL 这个空值
+    -->
+    <form action ="http://localhost:8080/jd/login">
+        <!-- 将表单中的数据提交到localhost服务器中的8080端口的软件中-->
+        <table> <!-- 表格-->
+            <tr> <!-- 第一行-->
+                <th>用户名</th> <!-- 加粗,居中-->
+                <td><input type = "text" name ="username"/></td> 
+                <!--text 文本框,name可以自行定义,最后要有意义,存在name可以将该数据提交给服务器,value就是你输入的内容-->
+            </tr>
+            <tr> <!-- 第二行-->
+                <th>密码</th>
+                <td><input type ="password" name = "userpwrd"></td>
+                <!-- password 密码框,name 自行定义最好要有意义,存在name 可以将该数据提交该服务器,value 就是你输入的内容-->
+            </tr>
+            <tr align = "center"> <!-- align = "center" 该行的数据居中显示-->
+                <td colspan = "2"> <!-- colspan = "2" 合并表列,-->
+                    <input type = "submit" value = "登录"/> 
+                    <!--submit 提交表单的按钮,不需要将该行的数据提交给服务器,不需要 name  value = "该按钮的提示显示,注意只有在表单中才有效"-->
+                    &nbsp;&nbsp;&nbsp; <!-- 空格-->
+                    <input type = "reset" value = "重置"/>
+                    <!-- reset 重置按钮,不需要将该行的数据提交给服务器,不需要name，
+                    value = "该按钮的提示显示",注意只有在 form 表单中才有效-->
+                </td>
+            </tr>
+<!-- 提交的数据在地址栏上的结果
+  http://localhost:8080/jd/login?username=123&userpwrd=000 
+  username 表示的是 name 的值
+  123 表示的是value 的值-->
+        </table>
+    </form>
+    <hr color = "red">
+    <br>
+
+
+    <!-- 在文本框输入域中 添加 value 的结果-->
+    <form action = "http://localhost:8080/js/login">
+        用户名 <input type = "text" name = "username" value = "666"/>
+        <!-- 默认在文本框中显示 你定义的 value 的值,最好不要在文本框中添加,
+        因为你添加了，也没有，都会被用户自己删除在重新输入-->
+        <input type = "submit" value = "登录"/> 
+        <!-- 结果
+        http://localhost:8080/js/login?username=666 
+    username 表示的是 name 的值
+   value 表示的是你输入的值-->
+        
+    </form>
+    <hr color = "blue" >
+    <br>
+
+
+    
+    <!-- 举例: 实现一个用户的注册表-->
+    <form action = "http://localhost:8080/js/login">
+        <!-- 将表单中的数据提交到 localhost 这个服务器中的8080端口的软件中-->
+        <table> <!-- 表格 不指明表格边框,默认没有边框-->
+            <tr> <!-- 第一行-->
+                <th>用户名</th> <!-- 加粗,居中-->
+                <td><input type = "text" name = "username"/></td>
+            </tr>
+            <tr>
+                <th>密码</th>
+                <td><input type = "password" name = "userpwrd" /></td>
+            </tr>
+            <tr>
+                <th>确认密码</th>
+                <td> <input type ="password"/></td> <!-- 确认密码不需要提交,所以不要name-->
+            </tr>
+            <tr>
+                <th>性别</th>
+                <td><input type = "radio" name = "gender" value = "1"/> 男
+                    <input type = "radio" name = "gender" value = "0"/> 女
+                    <!-- radio 单选框,都定义为 radio 多个中选择一个,需要提交数据
+                     name,value = "1" 表示提交你选择的数据 1 字符串,后面的“男”只是在页面中显示而已,并不会提交的服务器中的，后面的 “女” 是一样的-->
+                </td>
+            </tr>
+            <tr>
+                <th>兴趣爱好</th>
+                <td>
+                    <input type ="checkbox" name = "interest" value = "running"/> 跑步
+                    <input type = "checkbox" name = "interest" value = "code"/> 敲代码
+                    <input type = "checkbox" name = "interest" value = "raed"/> 阅读
+                    <!-- type = checkbox 表示复选框, name = 自己定义有意义的名字
+                      value 提交你选择的数据,后面的 跑步,敲代码,阅读,只是在页面中显示并不会提交数据给服务器,还是需要 name=value&-->
+                </td>
+            </tr>
+            <tr>
+                <th>学历</th>
+                <td>
+                    <select name = "grade">
+                        <option value ="gz" >高中</option>
+                        <option value = "dz"> 大专</option>
+                        <option value = "bk" selected > 本科</option>
+                        <option value = "ss">硕士</option>
+                    </select>
+                    <!-- select 下拉列表:
+                     option 表示列表选项,有多少个选项,就有多少个 option
+                    需要提交数据 name 自己定义要有意义,value 提交的数据,后面的高中,大专,本科,硕士都是在页面中显示的并不会被提交到服务器中-->
+                </td>
+            </tr>
+            <tr>
+                <th>简历</th>
+                <td>
+                    <textarea rows = "10" cols = "60" name = "introduce"></textarea>
+                    <!-- textareda 文本域,row 文本域的宽cols 文本域的长, name 自己定义要有意义,注意文本域,没有 value这个属性,用户填写的内容就是 value-->
+                </td>
+            </tr>
+            <tr align = "center"> <!-- 该行的数据,居中显示-->
+                <td colspan = "2" > <!-- 合并表列 2 个,删除没有规定-->
+                    <input type = "submit" value =  "登录"/>
+                    &nbsp;&nbsp;&nbsp; <!-- 空格-->
+                    <input type = "reset" value = "重置"/>
+                    <!-- submit 和 reset 必须在 form 表单中才有效果-->
+                </td>
+            </tr>
+
+        </table>
+    </form>
+    <!-- 结果
+    http://localhost:8080/js/login?username=Rainbow+Sea&userpwrd=123&gender=1&interest=running&interest=code&interest=read&grade=bk&introduce=Hello+World
+-->
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+#uid:read-only{    /*id 选择器，范围小，灵活*/
+    background:#ac5c5c; /* background 设置其文本框的填充颜色,read-only文本框的中的内容只读无法修改*/
+}
+
+
+#uname{
+    background-color:aquamarine;
+}
+
+#umajor{
+    background-color:aquamarine;
+}
+
+input[type="text"]:enabled{  /*enabled 表示当前元素处于可用的状态的样式*/
+   /* border:1px solid burlywood;*/
+    background-color:burlywood; /* background-color 点击文本框时填充的颜色*/
+}
+
+input[type="text"]:disabled{  /*disabled 表示当前元素处于不可用的状态的样式*/
+    border:1px solid orange;
+    background-color: aquamarine;
+}

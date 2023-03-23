@@ -1,0 +1,33 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开的格式编码,不是本页面的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉列表支持多选</title> <!-- 页面的标题-->
+</head>
+<body>
+    <form action = "http://localhost:8080/jd/register">
+        <select name = "selectd" multiple = "multiple" size = "2">
+            <!-- multiple= "multiple" 支持多选的,size 设置显示的条目数,没有写明的话默认是为一条-->
+            <option value = "hebei">河北省</option>
+            <option value = "henan">河南省</option>
+            <option value = "shandong">山东省</option>
+            <option value = "shanxi">山西省</option>
+            <option value = "jiangxi">江西省</option>
+            <!-- 有多少个选项,就定义多少个 option-->
+        </select>
+        <!-- 注意虽然是多选但是，需要按住 Ctrl 点击多个才可以-->
+        <br>
+        <!--name 可以将数据提交给服务器，注意 option中的 江西省，河北省,这些只是显示在页面当中的，并没有提交到服务器中，需要你 value指定将你选择的数据提交到服务器中-->
+        <input type = "submit" value ="登录"/>
+        <input type = "reset" value = "重置"/>
+        <!-- submit 和 reset 只有在form表单中才有效-->
+    </form>
+    <!-- 结果地址栏上
+    http://localhost:8080/jd/register?selectd=shanxi&selectd=jiangxi 
+   selectd 表示name的值
+   jiangxi 表示 value的值 -->
+    
+</body>
+</html>

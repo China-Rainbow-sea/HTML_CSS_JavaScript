@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的最后一个完美的案例</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 只有当所有信息都加载完了,才会被执行，调用该函数
+        window.onload = function() {
+            var btnElt1 = document.getElementById("btn1")
+            // 给id=bin1的元素绑定鼠标单击
+            btnElt1.onclick = function() {
+                console.log("按钮1 被点击了")
+            }
+
+            // 给id=“bin2” 的元素绑定鼠标单击
+            var btn2Elt = document.getElementById("btn2")
+
+            btn2Elt.onclick = function() {
+                console.log("按钮2被点击了")
+            }
+
+            // 可以整合一下
+            document.getElementById("username").onblur = function() {
+                console.log("失去焦点")
+            }
+        }
+
+    </script>
+
+
+
+    <input type="button" id="btn1" value="按钮" />
+    <input type="button" id="btn2" value="按钮" />
+    <input type="text" id="username" />
+</body>
+</html>

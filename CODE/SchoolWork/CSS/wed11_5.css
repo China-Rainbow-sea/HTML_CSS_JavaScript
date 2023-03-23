@@ -1,0 +1,43 @@
+.header {
+    width: 1000px;
+}
+
+.container {
+    width: 1000px;
+}
+
+.footer {
+    width: 1000px;
+    height: 100px;
+    background-color: rgba(222, 88, 26, 0.941);
+    clear: both;
+    text-align: center
+}
+
+.menu {
+    width: 160px;
+    float: left;
+    margin: 3;
+    text-align: center
+}
+
+.order {
+    height: 0px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.order .line {
+    display: inline-block;
+    width: 350px;
+    border-top: 2px solid red;
+}
+
+.order .txt {
+    color: white;
+    vertical-align: -4px;
+}
+
+font {
+    color: aliceblue;
+}

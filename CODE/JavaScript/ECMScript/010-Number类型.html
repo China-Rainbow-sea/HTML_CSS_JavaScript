@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 010-Number 类型</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* 
+          1.Number 类型包括哪些值：
+        -1,0,1, 2.3, 1000... NaN Infinity
+        整数，小数，正数，负数，不是数字，无穷大豆属于Number类型
+        2. isNaN(): 结果是 true 表示不是一个数字，结果是false表示是一个数字
+        3. parseInt() 函数 可以将字符串自动转换成数字，并且取其中的整数
+        4.parseFloat() 函数 可以将字符串自动转换成数字
+        5.Math.ceil() 函数(Math是数字类)
+        */
+       var v1 = 1;
+       var v2 = 3.14;
+       var v3 = -100;
+       var v4 = NaN;
+       var v5 = Infinity;
+
+       window.alert(typeof v1);
+       window.alert(typeof v2);
+       window.alert(typeof v3);
+       window.alert(typeof v4);
+       window.alert(typeof v5);
+
+       // 说明: 关于 NaN(表示 not a Number "不是一个数字"，但属于 Number 类型) 
+       // 运算结果本来应该是一个数字，最后计算完却不是一个数字，结果是NaN
+       var a = 100;
+       var b = "中国人";
+       window.alert(a / b); // 除号显然最后的结果应该是一个数字的，但是这里，返回的结果却是 NaN (因为 一个数值与 字符串进行除法运算，最后的结果 不是数字的所以就成了 NaN)
+
+       // 特殊的 
+       var e = "abc";
+       var f = 18 ;
+       window.alert(e + f); // abc18 + 号除了是 加的意思以外，还有 字符串拼接的意思
+
+       // Infinity （当除数为0的时候，结果为无穷大） 
+       window.alert(10 /0 );  // 无穷大，返回 Infinity
+
+       // 思考: 在javascript 中 10 / 3 = ?
+       window.alert( 10 / 3);  // 3.3333333333333335
+
+       // 关于 isNaN函数
+       // 用法: isNaN(数据)，结果是 true "表示不是一个数字" 是一个数字返回 false
+            
+
+       function sum(a,b) {
+        if(isNaN(a) || isNaN(b)) {
+            window.alert("参与运算的必须是数字");
+            return;
+        } 
+        return a + b;
+       }
+
+       sum(100,"abc");
+       window.alert(sum(100 , 200));
+
+       window.alert("***********************");
+       // pareseInt() : 可以将字符串自动转换成数字，并且取整数位
+       window.alert(parseInt("3.99999")); // 3
+       window.alert(parseInt(3.999)); // 3
+
+       // parseFloat(): 可以将字符串自动转换成数字
+       window.alert(parseFloat("3.14") + 1);  // 4.14
+       window.alert(parseFloat("3.2") + 1); // 4.2
+       window.alert(typeof parseFloat("9"));  // number 
+    </script>
+    
+</body>
+</html>

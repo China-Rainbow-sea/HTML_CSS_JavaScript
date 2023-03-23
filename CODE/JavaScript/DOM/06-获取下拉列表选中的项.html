@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取下拉列表当中被选中的项的value值</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            var prvinceList = document.getElementById("prvinceList");
+            prvinceList.onchange = function () {
+                // 获取选中项当中的 value值
+                window.alert(prvinceList.value);
+
+            }
+        }
+
+    </script>
+
+    <!--selcet 表示下拉列表的-->
+    <select id="prvinceList">
+        <!-- <select onchange="alert(this.value)"> this.value当前下拉列表中value的值 -->
+        <option value="">请选择省份</option>
+        <option value="001">河北省</option>
+        <option value="002">河南省</option>
+        <option value="003">山东省</option>
+        <option value="004"> 山西省</option>
+    </select>
+</body>
+
+</html>

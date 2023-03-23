@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于代码的执行顺序</title>
+</head>
+<!-- body onload:这种的代码在执行的时候，页面中的元素能全部加载完了。可以用于改变js的执行顺序，通过id获取对象-->
+<body onload="pagload()">
+    <script type="text/javascript">
+        function pagload() {
+            // 只有当页面所有的信息加载完毕了,这里才会执行,此时的id = bit的元素已经加载到浏览内电了 
+            var binElt = document.getElementById("btn")
+
+            binElt.onclick = function() {
+                console.log("按照被点击了，匿名函数被执行了")
+            }
+            /*
+            在页面打开的时候，以下运行代码不会执行，这行代码的作用是:将回调函数mfucniton()注册到Loda事件上,在页面全部加载完毕之后，会发生load事件,load事件发生之后,监听器负责调用回调函数,myfun*
+            */
+
+            window.onload = function() {
+                console.log("hello world!!")
+            } 
+            
+            // 页面打开的过程中实际是各种事件的绑定,等这些事件一个一个发生之后，回调函数统一都是由监听器来负责调用的
+            /*
+             xxxElt.onclick= function() {
+
+             }
+             xxxElt.onbur = fucntion()
+            */
+        }
+        
+
+    </script>
+
+    <input type="button" value="点击" id="btn" />
+</body>
+</html>

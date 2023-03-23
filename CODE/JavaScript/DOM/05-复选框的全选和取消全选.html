@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复选框的全选和取消全选</title>
+</head>
+<script type="text/javascript">
+    window.onload = function () {
+        var firstChk = document.getElementById("firstChk");
+        firstChk.onclick = function () {
+            // 获取第一个复选框的选中状态（复选框对象checkbox对象）
+            // alert(firstChk.checked)
+            // 根据name获取所有元素
+            /*var aihaos = document.getElementsByName("aihao");
+
+            if (firstChk.checked) {
+                // 全选
+                for (var i = 0; i < aihaos.length; i++) {
+                    aihaos[i].checked = true;
+                }
+            } else {
+                // 取消全选
+                for (var i = 0; i < aihaos.length; i++) {
+                    aihaos[i].checked = false;
+                }
+            }*/
+
+            // 优化:
+            // 同样的获取到第一个复选框的 checked 的值
+            var firstChk = document.getElementById("firstChk");
+            // 获取到多个同名的复选框当中的 checked 值,通过name值
+            var aihaos = document.getElementsByName("aihao");
+
+            for (var i = 0; i < aihaos.length; i++) {
+                // 所有下面的复选框的checked 值就等于下面复选框的值
+                aihaos[i].checked = firstChk.checked;
+            }
+
+            // 优化: 当所有的复选框都 打上勾了，则全选框也打上勾
+            // 获取到该复选框的所有个数 
+            var all = aihaos.length;
+
+            for (var i = 0; i < aihaos.length; i++) {
+                // 我们每点击一个复选框都要进行一个判定
+                aihaos[i].onclick = function () {
+                    var checkedCount = 0;
+                    // 总数量和选中的数量相等的时候，第一个复选框选中
+                    for (var i = 0; i < aihaos.length; i++) {
+                        if (aihaos[i].checked) {
+                            checkedCount++;
+                        }
+                    }
+                    // 一个复选框，勾选后，判断是否全选了，全选勾选上第一个
+                    firstChk.checked = (all == checkedCount);
+                }
+
+            }
+        }
+    }
+</script>
+
+<body>
+    <input type="checkbox" id="firstChk"><br>
+    <input type="checkbox" name="aihao" value="smoke" />抽烟<br>
+    <input type="checkbox" name="aihao" value="drink" /> 喝酒 <br>
+    <input type="checkbox" name="aihao" value="tt" /> 烫头<br>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js的控制语句</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* 8.for...in语句了解
+          9.with 语句了解*/
+          // 创建javascript数组
+          var arr = [false,true,1,2,"abc",3.14];
+          
+          // 遍历数组
+          for(var i = 0;i < arr.length; i ++) { // 注意这里的javascript当中的length是属性，不是方法
+            window.alert(arr[i]);
+
+          }
+          // 方式二:使用 for...in
+          for(var i in arr) {
+            window.alert(arr[i]);
+          }
+          
+
+          User = function(userName,password) {
+            // 定义属性
+            this.username = userName;
+            this.password = password;
+          }
+
+          var u = new User("张三","999");
+          // 访问
+          window.alert(u.username + "," + u.password);
+
+          window.alert(u["username"] + "," +u["password"]);
+
+          // 访问方式三 使用 for...in
+          // for(属性名: in 变量)
+          for(var shuXingMing in u) {
+            window.alert(u[shuXingMing]);
+          }
+
+          window.alert(u.username);
+          window.alert(u.password);
+
+          with(u) {
+            window.alert(username + "," + password);
+            window.alert(u.test);  // unfiding 
+          }
+    </script>
+
+
+    
+</body>
+</html>

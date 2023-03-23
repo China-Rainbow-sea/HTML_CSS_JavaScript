@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取或者设置div中的内容</title>
+</head>
+    <script type="text/javascript">
+        window.onload = function() {
+            // 获取id中的对象
+            var divEit1 = document.getElementById("div1")
+        // 获取div中的内容
+        // innerHtml是一个非常重要的属性，它可以获取也可以设置元素内部的内容
+       console.log(divEit1.innerHTML)
+
+        var divEit2 = document.getElementById("div2")
+        divEit2.innerHTML="固定的。。"
+
+        
+        // 将div1获取到的内容赋值给div2的innerHTML中
+        divEit2.innerHTML = divEit1.innerHTML
+        }
+
+        
+    </script>
+<body>
+    <!--div元素-->
+    <div id="div1">我是div</div>
+    <div id="div2"></div>
+</body>
+</html>

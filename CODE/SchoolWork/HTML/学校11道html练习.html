@@ -1,0 +1,262 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开的该页面的编码格式,不是设置该页面的编码-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校12道html练习</title>
+</head>
+
+<body>
+    <!-- action(url)name=value&name&value&...-->
+    <form action="http://localhost:8080/al/test/">
+        1.定义规定电话号码为xxxx-xxxxxxx格式的输入框,并再输入框内提示请输入电话号码<br>
+        <input type="text" placeholder="请输入电话号码: " pattern="^\d{4}-\d{7}$" name="cat" />
+        <!-- placeholder 作用:在文本框中显示提示 pattern 表示正则表达式,设定你输入的内容的格式,无效无法提交
+            -->
+        <input type="submit" value="提交" />
+        <!--submit 只有在form 表单中才有效 -->
+        <hr color="red"><br>
+
+
+
+        2. 定义一个账号输入框,输入格式只能为数字和小写字母,输入位数为 5-8 位,限定最长输入 8 格字符,并给出三个选项<br>
+        <!-- 说白了就是在文本框中定义单选框-->
+        <!-- pattern 设置限定输入的内容正则表达式,如需把 datalist 绑定到输入域，请用输入域的 list 属性引用 datalist 的 id：
+        datalist 表示输入域中的下拉列表:
+        注意:如果需要在输入域中定义 datalist 下拉列表的话,input 中的 list的值要等于 datalist 的id值-->
+        <input type="text" name="test1" pattern="[0-9 a-z]{5,8}" maxlength="8" list="users" />
+        <datalist id="users">
+            <!--如需把 datalist 绑定到输入域，请用输入域的 list 属性引用 datalist 的 id：list = datalist id值-->
+            <option>user01</option>
+            <option>user02</option>
+            <option>user03</option> <!-- option 列表中的选项内容-->
+        </datalist>
+        <hr color="black"><br>
+
+
+
+        3. 定义一个可以选择出生年月日以及具体时间的选择器<br>
+        <fieldset>
+            <legend>请选择出生年月日</legend> <!-- legend只能在fieldset 作为标题使用-->
+            <input type="date" />
+            <!--日期选择-->
+            <input type="time" /> <!-- 时间选择-->
+        </fieldset>
+        <hr color="blue"><br>
+
+
+
+        <!--hello world-->
+        4.定义一个复选框组，默认选择其中两个选项<br>
+        <!-- checkbox 表示复选框,注意和 radio 单选框一样 name 相同的为一组,checked 表示默认选中-->
+        <input type="checkbox" name="checkbox1" checked /> 北京
+        <input type="checkbox" name="checkbox1" /> 纽约
+        <input type="checkbox" name="checkbox1" checked /> 伦敦
+        <input type="checkbox" name="checkbox1" /> 东京
+        <hr color="green"><br>
+
+
+
+        6. 定义一个下拉框,显示4行,可以多选其中的元素,默认选中一个元素<br>
+        <!--select 是下拉列表-->
+        <select multiple="multiple">
+            <!--select,multiple确定是否可以多选,多选的话需要按住 ctrl 键  -->
+            <option value="shanghai">上海</option>
+            <option value="beijing" selected>北京</option>
+            <!--selected 下拉列表中的默认选中-->
+            <option value="niuyue">纽约</option>
+            <option value="lundun">伦敦</option>
+        </select>
+        <hr color="yellow"><br>
+
+
+
+        7. 定义一个颜色选择器,默认底色为绿色<br>
+        <input type="color" value="blue" />
+        <!--value 值可以是英文颜色-->
+        <input type="color" value="#3BAD25" /><!-- value值也可以使用十六进制表示颜色-->
+        <hr color="orange"><br>
+
+
+
+        8. 定义三个 p 标签,其中两个文字设定为可编辑,再定义一个普通按钮,点击按钮时把前两个 p 标签中的文字拼接在一起输出到第三个 p 标签中<br>
+        <!-- contenteditable 表示文本框中设置是否可以修改内容-->
+        <p id="text1" contenteditable="true"> hello</p>
+        <p id="text2" contenteditable="true">world</p>
+        <input type="button" value="保存" onclick="save()" /> <!-- onclick 表示事件 save()对应事件的触发器-->
+        <p id="text3"></p>
+        <script>  // 事件块
+            function save() {  // 定义设置触发器的作用
+                var a = document.getElementById("text1").innerHTML;
+                var b = document.getElementById("text2").innerHTML;
+                document.getElementById("text3").innerHTML = a + "," + b;
+
+            }
+        </script>
+        <hr color="purple"><br>
+
+
+
+        9. 定义一个当点击显示列表文字才显示的图片列表<br>
+        <!-- details属性显示无序有序列表的下拉内容，summary显示外部文字，里面的列表用menu包含,普通无序列表使用的ul标签  -->
+        <details>
+            <summary>显示列表</summary>
+            <menu>
+                <li><img src="../images/db_baidu.png " style="height:50px" />列表一</li>
+                <li></li><img src="../images/db_baidu.png" style="height:50px;width:50px" />列表二</li>
+                <li><img src="../images/db_baidu.png" style="height:50px;width:50px" />列表三</li>
+            </menu>
+
+        </details>
+        <hr color="red"><br>
+
+
+
+        10. 定义一个导航栏如图(学校官网),当鼠标移动到文字上时显示为黄色,如图1
+        <nav>
+            <!-- nav 定义导航栏-->
+            <img src="../images/th.jpg" /> <!-- 导入图片-->
+            <ul>
+                <!--无序列表-->
+                <li> <a href="链接地址">首页</a></li>
+                <li> <a href="链接地址">走进泰豪</a></li>
+                <li> <a href="链接地址">学院要闻</a></li>
+                <li> <a href="链接地址">院系导航</a></li>
+                <li> <a href="链接地址">招生就业</a></li>
+                <li> <a href="链接地址">科学教研</a></li>
+            </ul>
+        </nav>
+
+        <style>
+            /* html 导入css 样式块*/
+
+            nav {
+                /* 标签选择器*/
+                height: 90px;
+                /* 赋值是使用:引号,;分号结束 定义导航栏的高*/
+            }
+
+            nav img {
+                /* 内嵌多个标签选择器*/
+                float: left;
+                /*设置图片 左对齐*/
+
+            }
+
+            nav ul {
+                list-style: none;
+                /* list-style:none 去掉 无序列表的符号*/
+                padding-top: 30px;
+                /* 设置对象中的大小*/
+            }
+
+            nav ul li {
+                display: inline;
+                /* dispaly :inline 去除列表中的上下排序显示,变成左右排序显示*/
+                padding: 0px 20px 5px 50px;
+                /* 用于定义对象四个边距,设置列表对象中的左右上下的边距*/
+            }
+
+            nav ul li a {
+                text-decoration: none;
+                /* text-decoration:none 去除导航栏上链接a的修饰 如：去除链接文字的下滑线，以及蓝色字体*/
+                color: black;
+                /* 将字体修改为 黑色*/
+            }
+
+            nav a:hover {
+                /*  hover:设置对象在其鼠标悬停时的样式表属性。*/
+                color: blue;
+                /* 鼠标停留为 蓝色*/
+            }
+        </style>
+
+
+
+    </form>
+    <hr color="red"><br>
+
+
+
+    11. 设计一个网页结构(顶部,导航,正文,侧边栏,底部),用颜色表示每个块,如<br>
+    <header> </header> <!-- 定义文档的页眉-->
+
+    <nav> </nav> <!-- <nav> 标签定义导航链接的部分 -->
+
+    <article> </article> <!-- <article> 标签定义外部的内容。外部内容可以是来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。-->
+
+    <aside> </aside> <!-- <aside> 标签定义 article 以外的内容。aside 的内容应该与 article 的内容相关。-->
+
+    <footer> </footer> <!-- <footer> 标签定义 section 或 document 的页脚。-->
+    <br><br>
+
+
+    <style>
+        /* html 导入css样式块*/
+        /* 标签选择器*/
+        header {
+            /* 页眉的样式*/
+            height: 70px;
+            /* 页眉的高,:引号赋值,;分号结束*/
+            background-color: rgb(27, 43, 227);
+            /* 页眉的背景颜色*/
+        }
+
+        nav {
+            /*导航栏链接部分 css 样式*/
+            height: 50px;
+            /* 高:引号赋值,;分号结束*/
+            background-color: rgb(18, 232, 186);
+            /* 背景颜色*/
+        }
+
+        article {
+            /* 定义外部的内容*/
+            height: 500px;
+            width: 950px;
+            /* :引号赋值,; 分号结束*/
+            background-color: rgb(148, 19, 223);
+            float: left;
+            /* 左对齐*/
+        }
+
+        aside {
+            /* <aside> 标签定义 article 以外的内容*/
+            height: 500px;
+            width: 300px;
+            /* :引号赋值,;分号结束*/
+            background-color: rgba(173, 93, 27, 0.655);
+            float: right;
+        }
+
+        footer {
+            /* 页脚的内容*/
+            height: 300px;
+            /* :引号赋值,分号结束*/
+            background-color: rgba(5, 3, 3, 0.71);
+            clear: both;
+            /* 不允许有浮动对象,就是确保页脚在最下面*/
+
+        }
+    </style>
+    <hr color="red">
+
+
+
+    5. 定义一个表单,当点击提交按钮时弹出是否确认提交的提示<br>
+    <form onsubmit="submitForm()">
+        <!--onsubmit 表示事件, submitForm 你设定的触发器m名,-->
+        <input type="submit" /> <!-- submit 只有在 form 表单中才有效果-->
+    </form>
+    <script>
+        function submitForm() { // function 表示触发器
+            return confirm("是否确认提交"); // comfirm 表示在点击提交按钮后显示提示内容
+        }
+    </script>
+    <hr color="red"><br>
+
+</body>
+
+</html>

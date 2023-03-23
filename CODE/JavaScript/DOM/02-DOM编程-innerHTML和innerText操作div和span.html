@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM编程-innerHTML 和 innerText 操作div 和span</title>
+    <!--
+        innerHTML 和 innerText 属性有什么区别？
+        相同点: 都是设置元素内部的内容
+        不同点: 
+              innerHTML 会把后面的 “字符串”当做一段HTML代码解释并执行。
+              innerText 即使后面是一段HTML代码，也只是将其当做普通的字符串来看待
+    -->
+</head>
+<body>
+    <style type="text/css"> /*--导入css样式*/
+        #div1{  /*id选择器*/
+            background-color:aquamarine;
+            width:300px;
+            height:300px;
+            border: 1px,black,solid;
+            position:absolute;
+            top:100px;
+            left:100px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () { 
+            // 设置 div 的内容
+            
+            var btnElt = document.getElementById("btn");
+            btnElt.onclick = function() {  // 绑定事件
+                // 第一步：获取div对象
+                var divElt = document.getElementById("div1");
+                // window.alert("你好世界");
+                // 第二步: 使用innerHTML属性来设置元素内部的内容
+                // 只要有有属性，就可以. 点出来
+                // div1Elt.innerHTML = "你好世界";
+                divElt.innerText = "<font color='red'>用户名不能为空!</font>"; /*不会执行html的标签信息*/
+                divElt.innerHTML = "<font color='red'>用户名不能为空!</font>"; /*是会执行html的标签信息*/
+                
+            }
+        }
+    </script>
+    <input type="button" value="设置div中的内容" id="btn" />
+    <div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>  <!--html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!--表示浏览器打开的字符集编码,不是设置页面的字符集编码-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在html中使用css样式的第三种方式:引入外部独立的css文件</title>
+    <!-- 
+        第三种方式：链入外部样式表文件,这种方式最常用.(将样式写到一个独立的xxx.css文件当中,在需要的网页上直接引入css文件,样式就引入了)
+        语法格式
+        <head>
+            <link rel="stylesheet" type ="text/css" href="css文件的路径"/>
+    -->
+    <!-- 引入css样式-->
+    <link rel ="stylesheet"type="text/css" href="css1.css"/>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a> <!--百度链接-->
+    <br>
+    <!-- img src = "图片导入"-->
+    <span id ="baiduSpan"> 点击我链接到百度哦</span>
+</body>
+</html>

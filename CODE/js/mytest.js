@@ -1,0 +1,1 @@
+window.alert("测试外部导入javascript 文件")

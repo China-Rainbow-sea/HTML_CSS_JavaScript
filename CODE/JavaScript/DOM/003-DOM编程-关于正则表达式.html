@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM编程-关于正则表达式</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        3.正则表达式，对于我们javascript编写来说，掌握如下内容呢
+         第一: 常见的正则表达式符号要认识
+         第二: 简单的正则表达式要会写
+         第三: 他人编写的正则表达式要能看懂;
+         第四: 在javascript当中，怎么创建正则表达式对象！(new 对象)
+         第五: 在javascript当中，正则表达式对象有哪些方法！（调用方法）
+         第六:要能够快速的从网络上找到自己需要的正则表达式
+         7. 怎么创建正则表达式对象，怎么掉调用正则表达式对象的方法
+         第一种创建方式:
+             var regExp = /正则表达式/;
+         第二种创建的方式:使用内置支持类RegExp
+          var regExp = new RegExp("正则表达式","fiags");
+          关于flags: 
+            g: 全局匹配
+            i:忽略大小写
+            m: 多行搜索（ES 规范制定之后才支持 m ）当前面是正则表达式的时候，m 不能用，只有前面是普通字符串的时候，
+            m 才可以使用。
+        */
+       window.onload = function() {
+        document.getElementById("btn").onclick = function(){
+            var email = document.getElementById("email").value;
+            var emailRegExp = /w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*/ ;  // 注意正则表达式在javascript当中是不要加 "" 双引号不然就会被识别为是字符串的内容，类型了。就无法使用 test()函数判断了
+            var ok = emailRegExp.test(email); // 判断是否符合正则，符合返回true,不符合返回false;
+            if(!ok) {
+                document.getElementById("emailError").innerText = "邮箱地址不合法"
+            }
+            // 给文本框绑定上 focus
+            document.getElementById("email").onfocus = function() {
+                document.getElementById("emailError").innerText = "";
+            }
+        }
+       }
+
+    </script>
+    <input type="text" id="email" />
+    <span id = "emailError" style="color: red;font-size: 12px;"></span>
+    <br>
+    <input type="button" value="验证邮箱" id="btn">
+</body>
+</html>

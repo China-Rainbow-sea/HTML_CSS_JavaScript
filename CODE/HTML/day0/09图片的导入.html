@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en"> <!-- 根-->
+<head>  <!-- 头-->
+    <meta charset="UTF-8">  <!-- 浏览器打开的编码,不是页面的的编码-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片的导入</title> <!-- 页面的标题-->
+</head>
+<body> <!-- 体-->
+    <!-- 图片的导入使用 img src = 加图片的相对路径或者绝对路径，以及网上链接 -->
+    <img src = "../../images/db_baidu.png"/>
+    <br><br> <!-- br 换行-->
+
+
+    <img src = "../../images/db_baidu.png" width = 100px/>
+    <!-- width 图片的宽度设定 px 像素 可以是百分比(会自动根据页面大小缩放)-->
+    <br><br> <!-- br 换行-->
+    <img src = "../../images/db_baidu.png" width = "30%"/>
+
+    <br><br> <!-- br 换行-->
+    <img src = "../../images/db_baidu.png" width = 100px height = 90px/>
+    <!-- width 图片的宽度 height 图片的长度,图片的长度一般不要设定,不然容易变形
+     只要定义图片的宽度，它会自动调为最佳长度，不容易变形-->
+
+
+    <br><br> <!-- br 换行-->
+    <img src = "../../images/db_baidu.png"/>
+    <br>
+    <img src = "../../images/db_baidu.png"></img> <!-- /> 和 </img> 是一样的-->
+
+    <!-- title 表示鼠标悬停显示提示操作-->
+    <br><br> <!-- br 换行-->
+    <img src = "../../images/db_baidu.png" width = "100px" title = "我是百度图片"/>
+
+
+    <!-- alt 表示图片加载不出来的提示，比如网络不好,图片路径错误找不到图片-->
+    <br><br>
+    <img src = "../../images/db_baidu1.png" width = "60%" alt = "图片加载不出来"/>
+
+
+    <!-- alt 和 title 可以一起使用,当图片加载不出来的时候，提示 alt ,title 鼠标停留提示-->
+    <br><br>
+    <img src = "../../images/db_baidu.png" width = "60%" alt = "图片加载不出来" title = "百度图片"/>
+    <img src = "../../images/db_baidu1.png" width = "10%" alt = "图片加载不出来"
+     title = "百度图片"/>
+
+     <!--图片导入注意事项
+        1. 设置图片的高度的时候，只设定图片的宽度就可以了,高度会进行最好的比例缩放,
+          如果高度设定的不合适的话，图片会变形
+        2. img 标签就是图片的标签
+        3. src 属性是图片的路径(相对/绝对),以及网上的图片链接
+        4. width 设置图片的宽度,height 设置图片的高度
+        5. title 设置鼠标停留图片的提示信息
+        6.alt 设置图片加载失败的提示信息
+        7.title 和 alt 可以同时使用 
+     -->
+
+</body>
+</html> <!-- 根的结束-->

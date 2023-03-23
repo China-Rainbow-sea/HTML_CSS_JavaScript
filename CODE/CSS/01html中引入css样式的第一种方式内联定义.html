@@ -1,0 +1,44 @@
+<!DOCTYPE html>   <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器中打开该html的编码字符,不是设置当前页面的字符集-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html中引入css样式的第一种方式,内联定义方式</title> <!--页面标题-->
+</head>
+
+<!-- css好比是 html 的化妆品一样
+html 还是主体,css 依赖 html ,css 的存在就是修饰 html
+所以新建的文件还是以 xxx.html 文件-->
+<body>
+    <!--html 中 引入css样式方式一： 就是直接在对应需要 标签中配置 css-->
+    <!-- 在标签中内部使用 style 属性来设置元素的 css 样式,这种方式成为内联定义方式-->
+    <!-- 语法格式如下：
+    <标签 style = "样式名:样式值;样式名:样式值;...""></标签> 每个样式之间使用分号隔开,整体上使用双引号隔开
+    赋值之间使用 : 引号
+    -->
+
+    <div style ="width:300px;height:300px;background-color:#ccFFFF;"></div>
+    <!-- width 表示宽度样式
+         height 表示高度样式
+         background-color 背景色样式
+         display 布局样式(noe 表示隐藏,block 表示显示)-->
+
+    </div>
+    <br><br><br>
+
+    <div style ="width:300px;height:300px;background-color:aqua;display:block;
+    border-color:black;border-width:2px;border-style:solid"></div>
+    <!-- border-color:表示边框的颜色,默认是无色
+         border-width:2px 表示边框的大小
+         border-style:solid 表示实线边框-->
+    <br><br><br>
+
+
+    <!-- 对于边框样式还可以这样
+     border:1px solid black-->
+     <div style ="width:300px;height:300px;background-color:cornflowerblue;
+     display:block;border: 2px solid black;"></div>
+     <!-- display:表示布局样式;block 显示，block:表示边框设置-->
+</body>
+</html>

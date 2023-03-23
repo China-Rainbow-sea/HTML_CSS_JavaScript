@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js函数初步</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+          1. javaScript 中的函数
+             等同于 java语言中的方法，函数而是一段可以被重复利用的代码片段。
+          2. 回顾java中的方法 ？
+           修饰列表 返回值类型 方法名(参数列表, 参数列表) {
+                 方法体;
+           }
+           public static boolean login(String name, String password) {
+                retrun true;
+           }
+           boolean loginSuccess = login("abmin","123")
+           // js中的变量是一种弱类型，那么函数应该怎么定义呢？
+            语法格式：
+            第一种方式:
+                  function  函数名(形式参数列表) {
+                     函数体
+                  }
+
+            第二种方式：
+              函数名 = function (形式参数列表) {
+                函数体
+              }
+
+            重点: js中的函数不需要指定返回值类型，返回什么类型都行,js函数中的形式参数列表不需要指定类型。因为所有的类型都是被 var 类型存储的（一个万能的口袋） 所以直接省略就可以了
+
+
+        */
+       function sum(a,b) {
+           // a和b都是局部变量,他们都是形参(a和b都是比变量名,变量名随意)
+           alert(a + b);
+       }
+
+       // 函数必须调用才能执行的 
+       sum(10,20);
+
+       // 定义函数sayHello 
+       sayHello = function (username) {
+           alert("hello " + username);
+       }
+
+       // 调用函数
+       // sayHello("zhangsan");
+    </script>
+    <input type="button" value="hello" onclick="sayHello('柯南')" />  <!-- 双引号和单引号同时交替使用-->
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en" id="myhtml">
+<head id="myhead">
+    <meta charset="UTF-8"> <!-- 浏览器打开的编码设置,不是页面本身的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格超链接表单博客</title><!-- 页面标题-->
+</head>
+<body id="mybody">
+    <!--"http://localhost:8080/oa/save"这是请求路径,表单的数据最终提交到 "http://localhost"这个服务器中对应的8080端口的软件中-->
+    <form action = "http://localhost:8080/oa/save" id="myform">
+        限定<input id="myfom" type ="text" name = "username" maxlength ="3"/><br>
+        <input type = "submit" value = "提交"/>
+        <input type = "reset" value = "重置"/>
+        <!-- 注意: submit 和 reset 需要在form 中才有效-->
+    </form>
+</body>
+</html>
+
+

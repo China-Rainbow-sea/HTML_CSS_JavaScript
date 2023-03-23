@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示网页时钟</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        关于javascript 中内置的支持类，Date 可以用来获取时间/日期
+        */
+       // 获取系统当前时间
+       var nowTime = new Date();
+       // 输出
+       document.write(nowTime); // 默认是：欧式时间显示 Wed Mar 22 2023 10:56:25 GMT+0800 (中国标准时间)
+       // 转换成具有本地语言环境的日期格式
+       nowTime = nowTime.toLocaleString();
+       document.write(nowTime); // 2023/3/22 10:56:25
+       document.write("<br>");
+
+       // 如果当以上格式不是自己想要的，可以通过日期获取年月日信息，自定制日期时间格式
+       var t = new Date(); // 创建对象一个时间对象，默认是欧式时间
+       var year = t.getFullYear();  // 返回年信息，以全格式返回 2023
+
+       var month = t.getMonth();  // 月 注意这是：西方的月份格式是 从 0-11   0表示的1月份
+       var day = t.getDay();  // 获取的一周的第几天 注意这是：西方的天数格式： 从 0-6 开始的。 0 表示的是星期一
+       
+       document.write(year + "年" + month + "月" + day + "日");
+       document.write("<br>");
+
+       // 重点: 怎么获取毫秒数？(从1970年1月1日 00:00:00 到当前的系统时间称为 ：时间戳)
+       var times = t.getTime();
+       document.write(times); // 一般会使用毫秒数当做时间戳，
+
+       document.write("<br>");
+
+       document.write(new Date().getTime());  // 一次性获取到时间戳
+
+       document.write("<br>");
+    
+       function displayTime() {
+        var time = document.getElementById("timeDiv");
+        var strTime = new Date().toLocaleString(); // 本地系统时间格式
+        // 修改 div 当中的innerHTML的内容
+        time.innerHTML = strTime;  
+       }
+
+       // 每隔1秒 调用 dispalyTime()函数
+       function start() {
+        // 从这行代码执行结束开始，则会不间断的，每隔 1000毫秒调用一次 displayTime()函数
+        M =  window.setInterval("displayTime()",1000); // 单位是以毫秒,注意：如果在函数内的变量没有说明数据类型，则该变量为全局变量
+       }
+
+       function stop () {
+        // 取消每个函数的执行。配合 window.setInterval()使用，注意变量的赋值，是该函数的定义
+        window.clearInterval(M);
+       }
+
+    </script>
+    <input type="button" value="显示系统时间" onclick="start()"  />
+    <input type="button" value="系统时间停止" onclick="stop()" />
+    <div id="timeDiv"></div>
+</body>
+</html>

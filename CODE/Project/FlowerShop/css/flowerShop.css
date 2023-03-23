@@ -1,0 +1,548 @@
+#content {
+    /*div:contentid选择器*/
+    height: 30%;
+    width: 60%;
+    margin-left: 300px;
+    /*margin-left:左对齐*/
+}
+
+
+header {
+    /* header页眉标签的选择器 */
+    background-image: url(../images/head.jpeg);
+    /* background-image: url(../../用户登录/blob.png); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    background-color: #E78E87;
+
+    /* 多余大小的背景填充*/
+    /* background-image 属性会在元素的背景中设置一个图像,url图片的路径
+    background-repeat 属性设置是否及如何重复背景图像,默认地,背景图像在水平和垂直方向上重复,no-repeat 背景图像将仅显示一次。  
+    background-size使用contain自适应填满div块，cover长宽都拉伸填满
+    background-color : transparent | color  属性设置元素的背景颜色,transparent :背景色透明*/
+}
+
+nav {
+    /* 导航栏的的设置 */
+    height: 55px;
+}
+
+nav img {
+    /* 图片设置 */
+    float: left;
+
+    /*float : none | left |right ：none :对象不浮动left :对象浮在左边right : 对象浮在右边 */
+}
+
+nav ul {
+    /* 无序列表 */
+    list-style: none;
+    padding-top: 20px;
+    margin-left: 100px;
+
+    /* list-style: none 简写属性在一个声明中设置所有的列表属性 none:默认无图形被显示。去了无序列表中的小圆点 
+    padding-top:length 属性设置元素的上内边距（空间）。
+    margin-left length:左对齐 */
+}
+
+
+nav ul li {
+    /*页眉列表的设置*/
+    font-size: 20px;
+    display: inline;
+    padding: 0px 20px 5px 20px;
+
+    /* font-size 属性可设置字体的尺寸。
+     display 属性规定元素应该生成的框的类型，inline 默认。此元素会被显示为内联元素，元素前后没有换行符 
+     padding 属性定义元素边框与元素内容之间的空白区域，属性定义元素的内边距*/
+}
+
+nav a {
+    /*<a> 标签的 href 属性用于指定超链接目标的 URL--*/
+    text-decoration: none;
+    color: white;
+
+    /* text-decoration 属性规定添加到文本的修饰，none 默认定义标准的文本。  */
+}
+
+nav a:hover {
+    color: rgb(65, 176, 224);
+
+    /* :hover 伪类在鼠标移到元素上时向此元素添加特殊的样式。 */
+}
+
+
+#head_text {
+    /*id选择器:对应html中的文本内容的文字设置*/
+    margin-left: 150px;
+    margin-top: 80px;
+    font-family: "华文新魏";
+    font-size: 50px;
+    color: white;
+
+    /*margin-left length:左对齐
+    font-size 属性可设置字体的尺寸*/
+}
+
+
+#head_text input {
+    /*input 按钮的设置*/
+    height: 45px;
+    width: 135px;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+
+
+    /* border: border-width || border-style || border-color  简写属性在一个声明设置所有的边框属性，solid 定义实线。 
+    color:white;  这里是字体颜色，font-size 属性可设置字体的尺寸
+    background-color : transparent | color  属性设置元素的背景颜色,transparent :背景色透明 
+    或者: background-color: rgba(0, 0, 0, 0.1);按钮定义背景颜色可使用rgba()
+    
+    rgba(R,G,B,A)" 形式的字符串。在这种形式中，R、G 和 B 将颜色的红色、绿色和蓝色成分指定为 0 到 255 之间的十进制整数，并且 A 把 alpha（不透明）成分指定为 0.0 （完全透明）和 1.0 （完全不透明）之间的一个浮点数值。例如，半透明的完全红色为 "rgba(255,0,0,0.5)"。*/
+}
+
+#head_icon {
+    /*排列div块实现弹性布局,首先定义display为flex flexdirection定义排列方式*/
+    height: 140px;
+    margin-top: 15px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    /*direction 属性规定文本的方向 / 书写方向。rtl :文本流从右到左,ltr : 文本流从左到右
+    justify-content: space-around:将伸缩项沿伸缩容器当前行的主轴对齐*/
+
+}
+
+.icon {
+    /*对icon类选择器的div进行设置*/
+    margin-top: 10px;
+    height: 100px;
+    width: 100px;
+    /* margin-top 属性设置元素的上外边距。*/
+}
+
+.icon img {
+    /*图片设置样式*/
+    margin: 10px 20px 0px 30px;
+    filter: opacity(0.6);
+    border-radius: 50%;
+
+    /*设置外边距的最简单的方法就是使用 margin 属性,如果提供全部四个参数值，将按上－右－下－左的顺序作用于四边。
+    filter 属性允许您向文本和图像添加更多的样式效果,若需要使用 filter 属性，请始终指定元素的宽度。
+    元素外边距内就是元素的的边框 (border)。元素的边框就是围绕元素内容和内边据的一条或多条线。
+    radius 定义圆弧的圆的半径。
+    filter定义颜色透明度opacity(0.6)值越小越透明,border-radius属性当图片长宽一样时设定50%为圆形 
+    */
+}
+
+.icon p {
+    /* p标签中字体的样式设置 */
+    margin-left: 20px;
+    margin-top: 0;
+    color: white;
+    font-size: 20px;
+}
+
+aritcle {
+    height: 1200px;
+    width: 450px;
+    margin-left: 130px;
+
+    /* 
+    <article> 标签定义外部的内容。
+    外部内容可以是来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。
+    */
+}
+
+
+#content1 {
+    height: 250px;
+}
+
+/* (content1_img)两(content1_text)个div块水平面排列需要设置float对齐方式 */
+#content1_img {
+    height: 100%;
+    width: 220px;
+    margin-left: 150px;
+    float: left;
+
+    /* margin-left: 150px;整体靠左 150px像素对齐 */
+}
+
+#content1_img .content {
+    height: 25%;
+    font-size: 10px;
+
+}
+
+#content1_img .img {
+    height: 70%;
+    background: url(../images/flower1.jpeg) no-repeat;
+    background-size: cover;
+
+    /*
+    background-size: cover;指定背景图像的大小
+    ackground: url(../images/flower1.jpeg) no-repeat:属性，用于在样式表的同一位置设置大多数背景属性,这里是导入图片
+    */
+
+}
+
+#content1_text {
+    /*content1_text id选择器中的文本内容的样式*/
+    height: 100%;
+    width: 220px;
+    margin-left: 10px;
+    float: left;
+
+    /* margin-left: 10px;以左边的内容为参考系靠左移10px像素 */
+}
+
+
+#content1_text p {
+    font-size: 4px;
+    font-style: italic;
+    color: gray;
+
+
+    /* font-size 属性可设置字体的尺寸。 
+    font-style 属性定义字体的风格,italic 浏览器会显示一个斜体的字体样式。 
+    */
+}
+
+#content1_text input {
+    background-color: #E78E87;
+    color: white;
+    font-size: 4px;
+    height: 20px;
+    width: 70px;
+    border: none;
+    border-radius: 10px;
+
+
+    /* background-color : transparent | color  属性设置元素的背景颜色,transparent :背景色透明 
+    或者: background-color: rgba(0, 0, 0, 0.1);按钮定义背景颜色可使用rgba().这里表示设置普通按钮的背景颜色
+    color: white 这里表示的是字体的颜色
+    font-size 属性可设置字体的尺寸。 
+    font-style 属性定义字体的风格,italic 浏览器会显示一个斜体的字体样式。
+    元素的边框 (border) 是围绕元素内容和内边距的一条或多条线。CSS border 属性允许你规定元素边框的样式、宽度和颜色.
+    border-radius属性当图片长宽一样时设定50%为圆形
+    */
+}
+
+
+#content2 {
+    margin-top: 30px;
+    height: 300px;
+    text-align: center;
+    font-size: 6px;
+
+    /*text-align: center;设置或检索对象中文本的对齐方式,center居中 
+    font-size 属性可设置字体的尺寸*/
+}
+
+
+
+#content2 .img {
+    height: 70%;
+    margin-top: 30px;
+    background: url(../images/sunlight1.jpeg) no-repeat;
+    background-size: contain;
+    background-position: 50%;
+
+    /*
+    background-size: cover;指定背景图像的大小
+    ackground: url(../images/flower1.jpeg) no-repeat:属性，用于在样式表的同一位置设置大多数背景属性,这里是导入图片
+    background-position:50% 图片背景居中显示;占页面 50%
+    */
+}
+
+
+#content3 {
+    height: 150px;
+}
+
+#comtent3_imgs {
+    padding-top: 10px;
+    height: 100%;
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    /*direction 属性规定文本的方向 / 书写方向。rtl :文本流从右到左,ltr : 文本流从左到右
+    justify-content: space-around:将伸缩项沿伸缩容器当前行的主轴对齐,flex-direction: row指定如何将伸缩项放置在伸缩容器中。*/
+}
+
+
+#content3_img {
+    width: 18%;
+    height: 90%;
+    background-color: #E78E87;
+
+    /*background-color:#E78E87; 多余空白内容背景填充*/
+}
+
+/*使用结构选择器对同一层div块插入背景*/
+#content3_img:nth-child(1) {
+    background: url(../images/flower_con1.jpeg) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(2) {
+    background: url(../images/flower_con2.jpeg) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(3) {
+    background: url(../images/flower_con3.jpeg) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(4) {
+    background: url(../images/flower_con4.jpeg) no-repeat;
+    background-size: cover;
+}
+
+#content3_img:nth-child(5) {
+    background: url(../images/flower_con5.jpeg) no-repeat;
+    background-size: cover;
+}
+
+
+#content4 {
+    margin-top: 30px;
+    height: 200px;
+    text-align: center;
+    font-size: 6px;
+
+    /*text-align: center;设置或检索对象中文本的对齐方式,center居中 
+    font-size 属性可设置字体的尺寸*/
+}
+
+#content4 .img {
+    width: 85%;
+}
+
+#content4 img {
+    width: 50%;
+    border-radius: 120px 0 0 120px;
+}
+
+
+#content5 {
+    height: 250px;
+    margin-top: 100px;
+}
+
+#content5 .img {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /*direction 属性规定文本的方向 / 书写方向。rtl :文本流从右到左,ltr : 文本流从左到右
+    justify-content: space-around:将伸缩项沿伸缩容器当前行的主轴对齐,flex-direction: row指定如何将伸缩项放置在伸缩容器中。*/
+}
+
+.content5_img {
+    height: 100%;
+    width: 30%;
+
+}
+
+/*使用结构选择器设置样式*/
+.content5_img:nth-child(1) {
+    background: url(../images/flower1.jpeg) no-repeat;
+    background-size: cover;
+    border-radius: 0 50px;
+
+    /* 
+    background: url()设置背景图片
+    background-size:cover(覆盖)指定背景图像的大小
+    border-radius定义外部边界边缘的半径。*/
+}
+
+.content5_img:nth-child(2) {
+    background: url(../images/flower2.jpeg) no-repeat;
+    background-size: cover;
+    border-radius: 0 50px;
+}
+
+.content5_img:nth-child(3) {
+    background: url(../images/flower3.jpeg) no-repeat;
+    background-size: cover;
+    border-radius: 0 50px;
+}
+
+
+#content5 .content {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    /*direction 属性规定文本的方向 / 书写方向。rtl :文本流从右到左,ltr : 文本流从左到右
+    justify-content: space-around:将伸缩项沿伸缩容器当前行的主轴对齐,flex-direction: row指定如何将伸缩项放置在伸缩容器中。*/
+}
+
+.content5_content {
+    height: 100px;
+    width: 30%;
+}
+
+
+.content5_content h5 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 20px;
+
+    /* margin-bottom 属性设置元素的下外边距。
+注释：允许使用负值。 */
+}
+
+
+.content5_content p {
+    color: gray;
+    font-size: 15px;
+
+    /* font-size: 文本字体的样式格式 */
+}
+
+
+.content5_content input {
+    height: 25px;
+    width: 90px;
+    font-size: 6px;
+    color: white;
+    border: none;
+    background-color: #E78E87;
+    margin-left: 50px;
+    border-radius: 15px;
+
+    /* font-size: 文本字体的样式格式 
+    元素的边框 (border) 是围绕元素内容和内边距的一条或多条线。CSS border 属性允许你规定元素边框的样式、宽度和颜色/
+    background-color: #E78E87; 多余的空白的背景颜色
+    border-radius: 15px:定义外部边界边缘的半径.这里的效果是将普通按钮设置成椭圆型的形式
+*/
+}
+
+
+footer {
+    height: 150px;
+    background-color: #E78E87;
+    color: white;
+    font-size: 6px;
+
+    /*
+    background-color:#E78E87; 背景颜色
+    font-size 文本样式格式
+    */
+}
+
+
+#footer1 {
+    height: 40%;
+    margin-top: 200px;
+}
+
+#footer1 p {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+
+/*使用结构选择器设置样式*/
+#footer1 p:nth-child(1) {
+    float: left;
+
+    /* float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素left 元素向左浮动。 right 元素向右浮动。 
+    none 默认值。元素不浮动，并会显示在其在文本中出现的位置  */
+
+}
+
+#footer1 p:nth-child(2) {
+    float: left;
+}
+
+
+#footer2 {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.order {
+    height: 0px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.order .line {
+    display: inline-block;
+    width: 200px;
+    border-top: 1px solid white;
+
+    /*display: inline-block; 对齐方式*/
+}
+
+.order .txt {
+    color: white;
+    vertical-align: -3px;
+
+    /*vertical-align: 影响行内框内的行内级元素生成的行内框的垂直位置。*/
+}
+
+
+#footer_a {
+    margin-top: 10px;
+    margin-left: 120px;
+}
+
+#footer_a a {
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+
+    /*     
+    text-decoration 属性规定添加到文本的修饰,none 默认。定义标准的文本。
+    围绕在元素边框的空白区域是外边距。margin : auto(值被设置为相对边的值) | length(浮点数字和单位标识符组成的长度值 | 百分数) 设置外边距会在元素外创建额外的“空白”。设置外边距的最简单的方法就是使用 margin 属性，这个属性接受任何长度单位、百分数值甚至负值。 */
+
+}
+
+
+#footer3 {
+    height: 30%;
+    padding-left: 250px;
+    display: flex;
+
+    /*
+    CSS padding 属性定义元素的内边距。padding 属性接受长度值或百分比值，但不允许使用负值
+    display: flex; 对齐方式
+    */
+}
+
+
+#footer3 .icon {
+    width: 10%;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 35px;
+}
+
+#footer3 img {
+    height: 25px;
+    width: 25px;
+    filter: opacity(0.8);
+    margin: 0;
+
+    /* 
+    设置外边距的最简单的方法就是使用 margin 属性,如果提供全部四个参数值，将按上－右－下－左的顺序作用于四边。
+    filter 属性允许您向文本和图像添加更多的样式效果,若需要使用 filter 属性，请始终指定元素的宽度。
+    filter定义颜色透明度opacity(0.6)值越小越透明,border-radius属性当图片长宽一样时设定50%为圆形 
+     */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en"> <!-- 根-->
+<head>  <!-- 头-->
+    <meta charset="UTF-8"> <!-- 浏览器打开的编码格式,不是页面编码的设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接</title> <!-- 页面标题-->
+</head>
+<body> <!-- 体-->
+    <!-- a href = URL(网址或者是自己本地的资源路径)-->
+    <a href = "http://www.baidu.com"> 百度</a>
+    <a href = "http://www.jd.com/">京东</a>
+    <a href = "http://www.csdn.net/">CSDN</a>
+    <a href = "http://www.tmall.com/">天猫</a>
+    <br><br> <!-- 换行-->
+
+    <a href = "09图片的导入.html">图片的导入</a> <!-- 链接本地的资源-->
+
+    <!-- a
+     href: hot references 热引用
+     href 属性后面一定是一个资源的地址
+     href 后面的路径可以是绝对路径也可以是相对路径
+     可以是网络中某个资源的路径,也可以是本地资源的路径-->
+
+    <!-- 图片超链接-->
+    <br>
+    <hr color = "blue">
+    <a href ="http://www.baidu.com/"> 
+        <!-- 把文字改为 图片-->
+        <img src = "../../images/db_baidu.png" width = 120px/>
+    </a>
+
+
+    <!-- 超链接有一个target 属性
+    可取值
+    _blank 表示打开一个链接:创建一个新的窗口打开该链接
+    _self 表示打开一个链接：覆盖当前窗口打开该链接(默认是这个)
+    _top 顶级窗口:存在多个阶级的窗口时，打开链接,覆盖整个窗口
+    _parent 父窗口:存在多个阶级的窗口时,打开链接,覆盖前一个窗口
+    -->
+    <br> <!-- 换行-->
+    <hr color = "blue">
+    <a href = "http://www.baidu.com/" targer ="_self"> 百度</a>
+    <a href = "http://www.baidu.com/" target ="_blank">
+        <img src ="../../images/db_baidu.png" width = 120px/>
+    </a>
+</body>
+</html> <!-- 根的结束-->
+
+<!--
+    超链接的作用 URL
+    通过超链接可以从浏览器中向服务器发送请求
+    浏览器 B -- S服务器 请求(request)
+    S服务器 -- B 浏览器 响应(response)
+    每一个请求对应一个响应
+    用户点击超链接和用户在浏览器中直接输入 UPL，有什么同
+    本质上是没有什么区别的，都是向服务器放送请求
+    从操作上来看，超链接使用方便一点即可。
+-->

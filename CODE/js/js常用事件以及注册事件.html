@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js常用事件以及注册事件</title>
+</head>
+<body>
+    
+    <!-- 注册事件的第一种方式，直接在标签中使用事件句柄,-->
+    <input type="button" value="hello1" onclick="sayHello()" /> <!--以上代码的含义是，将sayHello函数注册到按钮上-->
+    <input type="button" value="hello2" id="mybtn" />   
+    <input type="button" value="hello3" id="mybtn3" />
+</body>
+</html>
+
+
+<script type="text/javascript">
+    /* 任何一个事件都会对应一个事件句柄,事件句柄是在事件前添加on，onxxx这个事件句柄，出现在一个标签的属性位置上,(事件句柄以属性的形式存在) 对于当前程序来说，salyhello函数被称为回调函数(callback函数) 
+    回调函数的特点: 自己把这个函数代码写出来了，但是这个函数不是自己负责调用，而是由其它程序负责调用该函数
+    */
+   function sayHello() {
+    alert("hello js")
+   }
+
+
+   /*
+   第二种注册事件的方式，是使用js代码完成事件的注册，
+   第一步：先获取这个按钮对象(document)是全部小写，可以直接使用.document 就代表这个html页面,DOM树.
+   */
+
+   // 注意通过id获取的对象,必须要让这个id在页面就加载完才可以获取到，不然报错
+   var btnobj = document.getElementById("mybtn");
+   // 第二步给按钮对象的onclick属性对象赋值
+   btnobj.onclick = sayHello // 注意：千万不要加 小括号,btnobj.onclick=sayhello() 这是错误的。这个代码的含义是将回调函数sayHello注册到onclick这个对象的事件中，当触发事件就调用该函数，其它情况是不会调用该函数的.
+
+   var mybtn1 = document.getElementById("mybtn")
+   mybtn1.onclick = function() {
+    window.alert("test....")
+   }
+
+   // 或者整合到一起
+   document.getElementById("mybtn3").onclick = function(){
+     window.alert("test222222.....")
+   }
+</script>

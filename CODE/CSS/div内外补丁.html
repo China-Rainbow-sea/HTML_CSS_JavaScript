@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div内外补丁</title>
+</head>
+    <style type="text/css">
+        .outdiv{
+            width:100px;
+            height:100px;
+            background-color:aqua; /*填充*/
+            border: 2px red solid;  /*div边框*/
+
+            margin-top: 100px; /*外补丁,下移动*/
+            margin-left: 100px;; /*外补丁,左移动*/
+            margin-right: 100px;/*外补丁,右移动*/
+        }
+
+        .indiv{
+            width: 200px;
+            height: 200px;
+            background-color:antiquewhite;
+            margin-top: 20px;  /*外补丁,向下移动*/
+
+            padding-right:100px; /*内补丁,以右边的方向补充,px像素大小,有点像是填充的效果,从这里原理 width:200px + 100px(右补丁,填充的) = 300px的宽了*/
+            padding-left: 20px; /*内补丁,以左边方向补充*/
+        }
+    </style>
+<body>
+    <div class="outdiv"></div>
+    <div class="indiv"></div>
+</body>
+</html>

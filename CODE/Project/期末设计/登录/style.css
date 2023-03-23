@@ -1,0 +1,158 @@
+body {
+    /* 背景图片*/
+    /* background-image: url("./login.jpg"); */
+    background-image: url("./login.wedp"), url("./login.png");
+    /*no-repeat 图片不平铺，平铺会填充整个页面，背景图片仅显示一次*/
+    background-repeat: no-repeat;
+    /* 按照屏幕大小计算尺寸cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器 */
+    background-size: cover;
+    /*fixed :背景图像固定,不会跟着鼠标滚动 ，从而填充整个页面*/
+    background-attachment: fixed;
+    /* 
+日常项目中经常会用到全屏的图片， .png 和 .jpg 的图片都太大，加载缓慢。
+我们可以使用webP格式的图片或者分辨率较低的压缩图，再叠加一层清晰的 png 图片，实现快速显示的效果。叠加 png 图片的目的是防止某些浏览器不支持 webP格式
+如下代码：background-image: url("./login.wedp"), url("./login.png"):两张图会进行叠加，先显示 webP 格式，再显示 png 格式，因为 webP 图片会比 png 小很多，可以实现快速显示的效果 */
+}
+
+.container {
+    width: 350px;
+    height: 350px;
+    /* 表单的背景颜色 rgba(red,green,blue,最后一个是背景的透明度(值越小越透明))*/
+    background: rgba(186, 221, 253, 0.7);
+    /* 或者使用:opacity: xxx 属性参数的不透明度是以数字表示的，从0.0到1.0，完全透明是0.0，完全不透明是1.0，数字越大代表元素越不透明。 */
+
+    /* 绝对定位，控制表单的位置：居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 外补丁顶部缩小一点 */
+    margin-top: -200px;
+    /* 外补丁的左边缩小一点 */
+    margin-left: -200px;
+
+    /* 字体颜色 */
+    color: black;
+
+    /* 边框变圆润 */
+    border-radius: 25px;
+    /* 设置阴影凹陷：水平偏移，垂直偏移，模糊值半径，阴影外延值(可以不提供)，阴影颜色 */
+    box-shadow: 5px 1px 8px #BADDFD;
+    /*fixed :背景图像固定,不会跟着鼠标滚动 ，从而填充整个页面*/
+    background-attachment: fixed;
+
+    /* 内边距,其实就是内补丁 */
+    padding: 60px;
+    /* 加载速度 */
+    transition: 0.5s;
+
+    /* margin: auto | length ;
+    如果提供全部四个参数值，将按上－右－下－左的顺序作用于四边。
+    如果只提供一个，将用于全部的四边。
+    如果提供两个，第一个用于上－下，第二个用于左－右。
+    如果提供三个，第一个用于上，第二个用于左－右，第三个用于下
+    auto : 　值被设置为相对边的值 */
+
+}
+
+/* 设置登录字体样式 */
+.container h1 {
+    /* 文本居中 */
+    text-align: center;
+    /* 上下外补丁，控制间距 */
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    /* 登录两字的间距 ,设置*/
+    letter-spacing: 10px;
+    /* 文本颜色 */
+    color: #273c75;
+}
+
+
+/* 输入你的账号和密码的文字样式 */
+.container h3 {
+    /* 文字居中 */
+    text-align: center;
+    /* 下外补丁，控制间距 */
+    margin-bottom: 15px;
+    /* "输入你的账号和密码"的文字之间的间距 */
+    letter-spacing: 2px;
+    /* 文字颜色 */
+    color: #487ed0;
+
+}
+
+/* 表单的上外补丁，控制间距 */
+.container form {
+    margin-top: 35px;
+    margin-left: 80px;
+}
+
+
+/* 设置表单中的input样式 */
+.container .form-group {
+    /* 下外补丁，控制间距 */
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+/* 设置表单中的input样式 */
+.container .form-group .form-control {
+    /* none去除边框设置 */
+    border: none;
+    /* 背景颜色设置为透明 */
+    background-color: transparent;
+
+    /* 设置用户名和密码下边框的样式 */
+    border-bottom: 1px solid rgba(24, 12, 12, 0.651);
+    /* 去除点击边框是提示的边框 */
+    outline: none;
+
+    /* 上内打补丁，控制间距 */
+    padding-top: 10px;
+    width: 100%;
+}
+
+.submit {
+    /* 边框设置为 0 */
+    border: 0;
+    /* 设置背景颜色为渐变色 */
+    background-image: linear-gradient(45deg, #feac5e, #c779d0, #4bc0c8);
+    width: 80%;
+    height: 30px;
+    /* 外上补丁，控制边距 */
+    margin-top: 30px;
+    /* 字体大小 */
+    font-size: 17px;
+    /* 字体颜色 */
+    color: black;
+
+    /* 设置加载速度 */
+    transition: 0.5s;
+
+}
+
+/* 鼠标经过，登入变化小手，以及文字颜色以及边框颜色 */
+.submit:hover {
+    color: black;
+    cursor: pointer;
+    /* 设置背景图片为渐变色 */
+    background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+    ;
+}
+
+/* 注册样式设置，控制行间距 */
+.container .sign-up {
+    /* 设置加载速度 */
+    transition: 0.5;
+    font-size: 17px;
+    margin-left: 2px;
+
+}
+
+.container a {
+    /* 去掉连接的下滑线 */
+    text-decoration: none;
+    /* 文字颜色 */
+    color: blue;
+}

@@ -1,0 +1,83 @@
+body{
+    /* 填充背景图片 */
+    background-image: url(./blob.png);
+    /*no-repeat 图片不平铺，平铺会填充整个页面*/
+    background-repeat: no-repeat;
+    /* 按照屏幕大小计算尺寸cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器 */
+    background-size: cover;
+    /*fixed :背景图像固定,不会跟着鼠标滚动 ，从而填充整个页面*/
+    background-attachment: fixed;
+}
+
+
+/* 表单的样式处理 */
+.login{
+    /* 绝对定位 */
+    position: absolute;
+    /* 绝对定位顶部位置 */
+    top: 50%;
+    /* 外补丁顶部缩小一点 */
+    margin-top: -200px;
+    /* 绝对定位左边位置 */
+    left: 50%;
+    /* 外补丁的左边缩小一点 */
+    margin-left: -200px;
+
+    width: 400px;
+    height: 400px;
+    /* 背景颜色 */
+    background-color:#1968df5c;
+    /* 边距的锐度,处理 */
+    border-radius: 25pt;
+
+    /* 文本居中 */
+    text-align: center;
+    /* 将按上－右－下－左的顺序作用于四边。 */
+    /* 上内补丁 */
+    padding-top: 5px;
+    /* 右内补丁 */
+    padding-right: 40px;
+
+    /* 标准盒子的样式 */
+    box-sizing: border-box;
+    /* 阴影效果 */
+    box-shadow: 5px 8px 5px #02214f;
+
+}
+
+.login h1 {
+    /* 字体样式 */
+    font-family: "微软雅黑";
+    /* 字体颜色 */
+    color: white;
+}
+
+input{
+    /* 文本框背景色 */
+    background-color: rgba(255, 255, 255, 0);
+
+    width: 80%;
+    height: 48px;
+
+    /* 向下外补丁 */
+    margin-bottom: 10px;
+    /* border:边框厚度，边框样式(实线虚线),边框颜色 */
+    border: 0px; /* 这里定位为0*/
+    /* 边框下面线的样式 ,边框厚度，边框样式(实线虚线),边框颜色*/
+    border-bottom: 2px solid silver ;
+
+    /* 点击边框是的提示线框不显示 */
+    outline: none;
+    /* 字体大小和验证 */
+    font-size: 22px;
+    color: white;
+
+}
+
+/* 登录按钮的样式处理 */
+.submit{
+    width: 40%;
+    /* background-image: linear-gradient()设置该提交按钮的背景颜色为渐变色 */
+    background-image: linear-gradient(10deg, #0081ff, #1cbbb4);
+
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js根据id获取页面的某个节点</title>
+</head>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            // 通过id 获取到对应标签对象
+            var mydivElt = document.getElementById("mydiv")
+            console.log(mydivElt)
+            window.alert(mydivElt)
+        
+        }
+
+        
+
+    </script>
+<body>
+    <div id="mydiv"></div>
+    <!--输入与域-->
+    <input type="text" id="username"/>
+    
+    <input type="button" id="test" value="获取div中的对象" onclick="gediv()"/>  <!--注意gediv()函数调用存放的位置,,-->
+
+    <script type="text/javascript">
+        function gediv(){
+            /*
+            获取div节点对象
+            document对象是js内置的对象，全部小写，可以直接使用
+            2.document 对象代表的是浏览器窗口中的网页文档DOM树
+            DOM树
+            对于document 来说一个html文档
+            对于这个文档来说我们称为 DOM树
+            DOM 树上有很多节点，每个节点都有id属性。
+            3. window 对象也是js内置对象，全部小写，可以直接拿来使用
+            4.window 对象代表当前浏览器窗口*/
+           var mydivElt2 = document.getElementById("test")
+           console.log(mydivElt2)
+           window.alert(mydivElt2)
+            }
+    </script>
+</body>
+</html>

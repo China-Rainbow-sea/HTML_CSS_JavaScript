@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML中嵌入havascript代码的第二种方式</title>
+</head>
+<body>
+    
+    <!--css样式代码块-->
+    <style type="text/css">
+        /*
+        css代码
+        */
+    </style>
+
+
+    <!--第二种方式：脚本块的方式添加 javascipet-->
+    <script type="text/javascript">
+        /* 暴露在脚本块当中的程序，在页面打开的时候执行，并且遵守自上而下的顺序逐行执行的
+        这种方式导入的 javascript 代码的执行是不需要通过事件触发的。直接就是逐行执行的
+        */
+       window.alert("你好世界")  //  alert 函数会阻塞整个 html 页面的加载。
+       window.alert("Hello World");
+    </script>
+
+    <input type="button" value="我是一个按钮" />
+</body>
+
+
+ <!--javascript 的脚本块在一个页面当中可以出现多次，没有要求
+     javascript 的脚本块出现位置也没有要求，随意-->
+ <script type="text/javascript">
+    /* 暴露在脚本块当中的程序，在页面打开的时候执行，并且遵守自上而下的顺序逐行执行的
+    这种方式导入的 javascript 代码的执行是不需要通过事件触发的。直接就是逐行执行的
+    */
+   window.alert("你好世界")  //  alert 函数会阻塞整个 html 页面的加载。
+   window.alert("Hello World");
+</script>
+</html>
+
+

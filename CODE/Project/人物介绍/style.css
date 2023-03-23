@@ -1,0 +1,155 @@
+/* 初始化界面 */
+* {
+    /* 上下左右外补丁为 0 */
+    margin: 0;
+    /* 上下左右内补丁为0 */
+    padding: 0;
+    /* 标准盒子样式 */
+    box-sizing: border-box;
+}
+
+/* 设置整体显示的布局 */
+.container {
+    /* width: 100%; */
+    /* 最大高度为视度100vh */
+    min-height: 100vh;
+    background-color: #e7f6f2;
+    /* flex:将对象作为弹性伸缩盒显示 */
+    display: flex;
+    /* 上下垂直居中 */
+    align-items: center;
+    /* 水平居中 */
+    justify-content: center;
+}
+
+
+/* 设置整体布局大小,居中显示 */
+.testimonial {
+    width: 90%;
+    /* 最大宽度 */
+    max-width: 800px;
+    /* 外浮点上下左右自适应,就会居中 */
+    margin: auto;
+
+}
+
+/* 设置所有文字显示边框的布局样式 */
+.testimonial-text {
+    background-color: #2c3333;
+    color: white;
+    width: 100%;
+    height: 350px;
+    /* 相对定位 */
+    position: relative;
+    /* 设置边框的锐度 */
+    border-radius: 25px;
+    /* 设置阴影布局效果 */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 设置所显示的文字样式 */
+.user-text {
+    width: 80%;
+    /* 文本居中 */
+    text-align: center;
+    /* 设置文本之间的行高(行与行之间的距离间隔) */
+    line-height: 32px;
+    /* 绝对定位 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* translate()： 指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0  */
+    transform: translate(-50%, -50%);
+    /* 弹性布局不显示文字内容,当我们需要的时候在显示出来通过js代码 ,在.user-text .active-text*/
+    display: none;
+    /* 设置全部在0.5s后从下面加载出来显示文字*/
+    transition: all 0.5s ease-in;
+
+}
+
+/* 设置标题的样式 */
+.user-text .title {
+    /* 字体大小 */
+    font-size: 30px;
+    /* 底部打外补丁,控制间距 */
+    margin-bottom: 30px;
+    /* 顶部打外补丁,控制间距 */
+    margin-top: 20px;
+}
+
+/* 设置下面的副标题的样式 */
+.user-text span {
+    /* 弹性布局块的形式显示,会独占行 */
+    display: block;
+    /* 字体大小 */
+    font-size: 15px;
+    /* 顶部打外补丁,控制间距 */
+    margin-top: 78px;
+    /* 字体的加粗度 */
+    font-weight: 500;
+}
+
+
+/* 设置整体图片的布局样式 */
+.testimonial-pic {
+    /* 顶部打外补丁控制间距 */
+    margin-top: 30px;
+    /* flex:将对象作为弹性伸缩盒显示,用于排列布局显示 */
+    display: flex;
+    /* 上下垂直居中 */
+    align-items: center;
+    /* 水平居中 */
+    justify-content: center;
+}
+
+
+/* 设置每张图片的样式 */
+.user-pic {
+    width: 65px;
+    height: 65px;
+    /* 上下左右内补丁,控制间距 */
+    padding: 7px;
+    /* 设置边框的锐度,50%是圆形 */
+    border-radius: 50%;
+    /* 上下左右外补丁,控制间距 */
+    margin: 10px;
+    /* 设置鼠标经过,变成小手 */
+    cursor: pointer;
+    /* auto:背景图像的真实大小 */
+    background-size: auto;
+    /* 背景图像的内容:center横向或纵向居中 */
+    background-position: center;
+    /* 设置加载的延迟时间 */
+    transition: all 0.5s ease-in-out;
+}
+
+/* 注意同一个标签含有多个类名,要使用的话类名之间不要有空格
+不然无法检索到 */
+/* 设置第一个标题的文字信息为一开始显示的文字信息 */
+.user-text.active-text {
+    /* 弹性布局(一块的形式独占行),显示我们在.user-text样式中none隐藏的文字信息 */
+    display: block;
+    /* animation检索或设置对象所应用的动画特效。后接@keyframes编写指定动画名称和动画效果。  */
+    animation: moveup 0.5s linear forwards;
+
+    /* linear: 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) forwards:设置对象状态为动画结束时的状态 */
+}
+
+/* 设置第一个标题的图片信息为一开始显示的图片信息信息 */
+.user-pic .active-pic {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #2c3333;
+}
+
+
+/* 编写动画效果 */
+@keyframes moveup{
+    0%{
+        margin-top: 10%;
+    }
+    100%{
+        margin-top: 0px;
+    }
+}

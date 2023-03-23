@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js的局部变量和全局变量</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            全局变量:
+                在函数体之外声明的变量属于全局变量,
+                全局变量的生命周期是;
+                浏览器打开的时声明，浏览器关闭时销毁，尽量少用,因为全局变量会一直在浏览器的内存当中，耗费内存空间，能使用局部变量尽量使用局部变量。
+            局部变量:
+                在函数体当中声明的变量，包括一个函数的形参都属于局部变量。局部变量的生命周期是：函数开始执行时局部变量的内存空间开辟,函数执行结束之后,局部变量的内存空间释放，局部变量生命周期较短.
+        */
+        // 全局变量
+         var i = 100;
+         function access1() {
+            // 这里访问的是全局变量
+            window.alert("i = " + i);
+         }
+
+         access1();
+
+         var username = "jack";
+         function accessUserName() {
+            var username = "lisi";
+            alert("uusername = " + username); // 调用的局部变量
+         }
+         // 局部变量: 出来上述的函数的作用域，导致局部变量被销毁了. 
+         accessUserName();  // 调用函数
+         alert(username); // 调用的是全局变量 jack
+
+
+         function accessAge() {
+            var age = 20;
+            alert("年龄 = " + age);
+         }
+
+         accessAge();
+
+         // alert("age = " + age);  // 报错，因为age为局部变量(出来生命周期被销毁了)，无法调用的
+
+
+         //重点: 当一个变量声明的时候没有使用 var 关键字，那么不管这个变量在是在哪里声明的，都是全局变量,注意要先调用该函数，生成变量的值。否则该变量还是局部变量的
+         // 以下语法比较的奇怪
+         function myfun() {
+            // 如果一个方法中的局部变量，没有声明类型则该变量就会变成局部变量
+            myname = "dujubin";
+            //var myname = "dujubin" // 这样就是局部变量了。
+         }
+
+         // 访问函数
+         myfun();  
+         alert("myname = " + myname); // dujubin  访问的全局变量
+    </script>
+</body>
+</html>

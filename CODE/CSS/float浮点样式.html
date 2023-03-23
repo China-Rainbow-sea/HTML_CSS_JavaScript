@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float浮动样式</title>
+</head>
+    <style type="text/css">
+        /*三种选择器的优先级: id选择器> .类选择器> 标签选择器*/
+
+        #outdiv{
+            width: 300px;
+            height: 300px;
+            background-color:aqua;
+
+            float:right; /* 右边浮动*/
+            float:left; /*左边浮动*/
+        }
+
+
+        #indiv{
+            width:100px;
+            height:100px;
+            background-color:antiquewhite;
+
+            float:right; /*右边浮点*/
+
+        }
+    </style>
+<body>
+    <div id="outdiv">
+        <div id="indiv"></div><!--注意需要定义在第一个div标签当中-->
+    </div>
+    
+</body>
+</html>

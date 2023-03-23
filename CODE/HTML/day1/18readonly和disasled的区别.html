@@ -1,0 +1,29 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器的打开该页面的编码,不是设置该页面的编码-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>readoly和disabled的区别</title> <!--页面的标题-->
+</head>
+<body>
+    <!-- readoly 和 disabled 相同点都是只读不可修改,同样无法通过 reset 重置
+    但是 readoly 可以提交数据给服务器,
+    disabled 数据不会提交(即便存在 name 属性也不会提交)
+    既然不会提交数据,那name也就不需要写了 -->
+    <form action = "http://localhost:8080/taobao/save">
+        用户名 <input type = "text" name ="username" value = "111" readonly/><br>
+        <!-- 在文本框中指明value 就是默认值，又加了 readonly 只读不可修改,可以将数据提交到服务器中-->
+        用户代码<input type = "text" name = "usercode" value = "zhangsan" disabled /><br>
+        <!-- 在文本框中指明value的值(就是默认值),又加上了 disabled 只读,不会将数据提交的服务器中的-->
+        <input type = "submit" value = "提交"/>
+        &nbsp;&nbsp;&nbsp;<!--空格-->
+        <input type = "reset" value = "重置"/> 
+        <!-- 其中的数据是 readonly 和 disabled 是无法重置的-->
+    </form>
+    <!-- 结果地址栏
+    http://localhost:8080/taobao/save?username=111
+   可以看到 disabled 定义的属性的数据并没有提交到服务器中 -->
+    
+</body>
+</html>

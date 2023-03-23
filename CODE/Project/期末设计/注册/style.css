@@ -1,0 +1,119 @@
+/* 界面初始化 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 标准盒子 */
+    box-sizing: border-box;
+
+}
+
+
+/* 设置整体布局样式 */
+body {
+    /* 字体样式 */
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(./reception4.jpg);
+    /* background-image: url(./reception5.jpeg); */
+    /*no-repeat 图片不平铺，平铺会填充整个页面*/
+    background-repeat: no-repeat;
+    /* 按照屏幕大小计算尺寸cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器 */
+    background-size: cover;
+    /*fixed :背景图像固定,不会跟着鼠标滚动 ，从而填充整个页面*/
+    background-attachment: fixed;
+}
+
+.container {
+    /* 相对定位,让表单居中显示 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -250px;
+    /* 边框锐度，50%为圆*/
+    /* 阴影布局 */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    width: 500px;
+    height: 500px;
+
+}
+
+.form-container form {
+    background:  #bdc3c7;
+    padding-top: 20px;
+    /* 边框的锐度，50%是圆 */
+    border-radius: 20px;
+    /* 背景的透明度 */
+    opacity:0.8;
+    /* 弹性布局 flex 横向布局，不会独占行 */
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 1.8rem; */
+    height: 100%;
+    /* 水平居中 */
+    justify-content: center;
+    /* 垂直居中 */
+    align-items: center;
+
+    /* flex-direction属性决定主轴的方向（即项目的排列方向）
+    row（默认值）：主轴为水平方向，起点在左端。
+    row-reverse：主轴为水平方向，起点在右端。
+    column：主轴为垂直方向，起点在上沿。
+    column-reverse：主轴为垂直方向，起点在下沿。 */
+
+}
+
+
+.form-container input {
+    width: 100%;
+    /* height: 0px; */
+    height: 2.2rem;
+    background-color:  #bdc3c7;
+    /* 文本左边缩进 */
+    text-indent: 2.2rem;
+    /* 边框样式：边框大小，边框虚实线，边框颜色 */
+    border: 6px solid #ccc;
+    /* 上左右边框线消失，保留显示右下边框横线 */
+    border-left: none;
+    border-top: none;
+    border-right: none;
+
+    /* 点击时input 的边框消失 */
+    outline: none;
+    margin: 0.6rem 0;
+}
+
+/* 鼠标点击选中时,让按钮有一个渐变的效果的变化 */
+.form-container button:active {
+    background-image: linear-gradient(45deg, #feac5e, #c779d0, #4bc0c8);
+}
+
+
+.form-container button {
+    /* 内补丁，左右,上下， */
+    padding: 1rem 0.5rem;
+    background: #417dff;
+    color: white;
+    /* 边框 */
+    border: 1px solid #fff;
+    /* 鼠标点击时,边框消失 */
+    outline: none;
+    /* 鼠标经过,小手 */
+    cursor: pointer;
+    width: 5rem;
+    /* 设置边框锐度,50%是圆 */
+    border-radius: 8px;
+    /* 加载延迟时间 */
+    transition: all 1000ms ease-in;
+    margin: 0.6rem 0;
+    /* 字体大小 */
+    font-size: 0.6rem;
+}
+
+
+span{
+    position: relative;
+    width: 80%;
+    height: 20px;
+    /* 给块设置文本居中 */
+    text-align:center 
+}

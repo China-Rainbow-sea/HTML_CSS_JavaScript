@@ -1,0 +1,169 @@
+/* 初始化界面 */
+* {
+    /* 上下左右外不补丁为0 */
+    margin: 0;
+    /* 上下左右内不补丁为0 */
+    padding: 0;
+}
+
+/* 整体布局的样式 */
+body {
+    /* vh 是视图单位 */
+    height: 100vh;
+    /* 弹性布局，默认横向排列 */
+    display: flex;
+    /* 弹性布局水平居中 */
+    justify-content: center;
+    /* 弹性布局，上下垂直居中 */
+    align-items: center;
+    /* 背景颜色设置为渐变色 */
+    background: linear-gradient(200deg, #517fa4, #243949);
+    /* deg是CSS中的一个角度单位，表示度(Degress)，一个圆共360度。在CSS中角度单位有：度(deg)、梯度(grad)、弧度(rad) */
+}
+
+
+/* 所有卡片的布局 */
+.card {
+    /* 相对定位 */
+    position: relative;
+    width: 300px;
+    height: 500px;
+    /* 上下左右外补丁 */
+    margin: 20px;
+    background-color: #758a99;
+
+    /* 去除边框的锐度 */
+    border-radius: 20px;
+    /* 溢出隐藏，去除超出边界的部分 */
+    overflow: hidden;
+
+    /* 弹性布局，flex默认横向排列，none不显示,block以块的方式显示独占行,inline-block:以块的形式显示,并不会独占行 */
+    display: flex;
+    /* 设置元素信息纵向排列column:主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐） */
+    flex-direction: column;
+    /* 上下垂直居中 */
+    align-items: center;
+    color: #fff;
+    /* 设置阴影凹陷 */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    /* 根据弹性盒子元素所设置的收缩因子作为比率来收缩空间。防止被其他盒子压缩导致图片缩小
+    注意：如果元素不是弹性盒对象的元素，则 flex-shrink 属性不起作用。 */
+    flex-shrink: 0;
+}
+
+
+/* 设置所有图片的样式 */
+.card .photo img {
+    width: 100%;
+    height: 100%;
+    /* 保持图片原有的尺寸比例填充，防止失帧 */
+    object-fit: cover;
+}
+
+
+/* 设置最开始显示的大图 */
+.card .photo {
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    /* 去除边框的锐度 */
+    border-radius: 0%;
+    /* 隐藏溢出的边角,隐藏超过边角的角 */
+    overflow: hidden;
+    /* 动画过渡 设置加载延迟时间*/
+    transition: 0.5s;
+}
+
+
+/* 设置鼠标移入到图片位置，变小图 hover鼠标样式 */
+.card:hover .photo {
+    top: 30px;
+    width: 120px;
+    height: 120px;
+    /* 去除边框的锐度，50%是圆形 */
+    border-radius: 50%;
+    /* 设置边框的阴影凹陷 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+
+/* 这里加个黑色到透明的渐变背景，可以更好的看清除名字 */
+.card .photo::before{
+    content: "";
+    /* 绝对定位 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,transparent);
+}
+
+
+/* 设置标题1 显示的文字样式 */
+.card h1{
+    position: absolute;
+    top: 370px;
+    /* margin-left: 120px; */
+    /* 设置加载延迟时间 */
+    transition: 0.5s;
+}
+
+/* 鼠标移动到图片上时,标题h1显示的内容上移 top 170px */
+.card:hover h1{
+    top:170px;
+}
+
+
+/* 设置副标题的文字样式 */
+.card h2{
+    /* 上打外补丁 */
+    margin-top: 220px;
+    width: 80%;
+    /* 设置边框的样式: 边框的厚度,边框的样式(虚实线),颜色 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /* 字体大小 */
+    font-size: 20px;
+    /* 文本居中 */
+    text-align: center;
+    /* 向底部,打外补丁 控制间距*/
+    margin-bottom: 20px;
+    /* 向底部,打内补丁,控制间距 */
+    padding-bottom: 20px;
+}
+
+.card p {
+    width: 90%;
+    /* 文本左边缩进 */
+    text-indent: 20px;
+    /* 字体大小 */
+    font-size: 15px;
+    /* 底部,打外补丁 */
+    margin-bottom: 15px;
+    /* 文本行与行之间的间距 */
+    line-height: 30px;
+  
+}
+
+.card a{
+    /* 字体大小 */
+    font-size: 14px;
+    /* 字体背景颜色 */
+    color: rgba(255, 255, 255, 0.8);
+    /* 去除链接的下划线 */
+    text-decoration: none;
+      /* 设置边框的样式: 边框的厚度,边框的样式(虚实线),颜色 */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* 两个值:上下,左右内补丁 */
+    padding: 8px 32px;
+    /* 边框的锐度 */
+    border-radius: 8px;
+}
+
+.card a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+

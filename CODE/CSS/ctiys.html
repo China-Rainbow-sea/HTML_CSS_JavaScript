@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ctiy 样式块的 </title>
+</head>
+    <style type="text/css">
+        .citys{
+            display:block;
+            /*
+            display样式:
+            1.属于布局样式
+            2.用来设置显示或者隐藏
+            3.隐藏:none ;
+            4.显示: block 或者 inline-block
+                block:是一块的形式展现,并且独自占用一行
+                inline-block:是块的形式展现,但是不会独自占用一行
+            */
+
+
+        }
+    </style>
+<body>
+    <!-- 无序列表-->
+    <ul>
+        <li>中国
+            <ul class="citys">
+                <li>北京</li>
+                <li>上海</li>
+                <li>天津</li>
+            </ul>
+        </li>
+            <li>美国
+                <ul class="citys">
+                    <li>华盛顿</li>
+                    <li>波斯顿</li>
+                    <li>芝加哥</li>
+                </ul>
+
+            </li>
+    </ul>
+</body>
+</html>

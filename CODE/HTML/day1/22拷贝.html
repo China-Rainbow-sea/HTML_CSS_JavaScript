@@ -1,0 +1,72 @@
+<!DOCTYPE html> <!-- html5.0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 浏览器打开的编码设置,不是页面本身的编码设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格超链接表单博客</title><!-- 页面标题-->
+</head>
+<body>
+    
+    <!--"http://localhost:8080/oa/save"这是请求路径,表单的数据最终提交到 "http://localhost"这个服务器中对应的8080端口的软件中-->
+    <form action = "http://localhost:8080/oa/save" method = "get"> <!--地址栏上不显示提交的数据信息-->
+        <table align = "center"> <!-- 表格,没有指明表格边框的值,默认没有边框-->
+            <tr>
+                <th>用户名</th> <!--<th>居中加粗-->
+                <td><input type ="text" name ="username" /></td>
+            </tr>
+            <tr>
+                <th>密码</th>
+                <td><input type ="password" name ="userpwrd" /></td>
+            </tr>
+            <tr>
+                <th>性别</th>
+                <td><input type = "radio" name = "gender" value = "1">男
+                    <input type = "radio" name = "gender" value = "0">女
+                    <!-- radio 表示单选框, name值相同的为同一组,同一组中只能选择一个数据提交给服务器,注意:后面的男女只是显示在页面中的提示,是不会将它们提交给服务器的,所以,需要我们自定义 value的值,的数据提交给服务器-->
+                </td>
+            </tr>
+            <tr>
+                <th>兴趣爱好</th>
+                <td> 
+                    <input type = "checkbox" name = "interest" value ="running"/>跑步
+                    <input type = "checkbox" name = "interest" value ="code" />敲代码
+                    <input type = "checkbox" name = "interest" value = "read"/>阅读
+                    <!-- checkbox 复选框,可以多选,同样需要指明value 你提交的数据,后面的跑步,敲代码,阅读都是在页面中显示的数据,不会提交给服务器的-->
+                </td>
+            </tr>
+            <tr>
+                <th>学历</th>
+                <td>
+                    <select name = "grade">
+                        <option value = "gz">高中</option>
+                        <option value = "dz">大专</option>
+                        <option value = "bk selected">本科</option>
+                        <option value = "ss">硕士</option>
+                    </select>
+                    <!--提交数据需要有name 属性,
+                    select 表示下拉列表
+                    selected 下拉列表的默认值
+                    value 定义选择对应的提交的数据值-->
+                </td>
+            </tr>
+            <tr>
+                <th>简历</th>
+                <td><!-- 文本域,textarea ,-->
+                    <textarea rows = "10" cols = "60" name = "introduce"></textarea>
+                    <!-- 文本域,没有value属性,用户填写的内容就是value的值-->
+                </td>
+            </tr>
+            <tr>
+                <td align = "center" colspan="2"> <!-- colspan 合并表列 -->
+                    <input type  = "submit" value = "登录" />
+                    &nbsp;&nbsp;&nbsp;
+                    <input type = "reset" value = "清空"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+

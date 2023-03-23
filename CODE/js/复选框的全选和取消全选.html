@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复选框的全选和取消全选</title>
+</head>
+    <script type="text/javascript">
+        function checkbox() {
+        // 通过id,获取到第一个复选框的对象
+        var firstchk = document.getElementById("firstchk")
+        // window.alert(firstchk)  测试一下
+        // 通过name 获取一组 checkbox中所有的复选框的对象集合(数组)
+        // getElementsByName通过 name获取对象
+        var aihao = document.getElementsByName("aihao") // 注意这里是通过 name获取对象集合的,因为复选框是同名为一组的集合
+        // 变量获取到的对象集合,
+        for(var i = 0;i < aihao.length; i++) {
+            // window.alert(aihao[i])
+            // console.log(aihao[i]) 测试一下
+            //console.log(firstchk.checked) 
+            // checked获取到复选框checkbox是否为选中状态是，返回true,不是返回false
+
+            /*
+            // 若第一个复选框为选中，则全选，否则取消全选
+            if(firstchk.checked) {
+                
+                // 遍历同名的一组的复选框的对象数组,全选上通过checked=true
+                for(var i = 0; i < aihao.length;i++) {
+                    aihao[i].checked=true; // 对象可以"."含有的所有属性包括隐藏没有写明的,如这里的checked是复选框的一个方法
+                } 
+            } else {
+                // 没有勾选上全选,取消全选
+                // 同样遍历所有同名的复选框,通过其中的checked方法置为false 没有选中的状态
+
+                for(var i = 0; i < aihao.length;i++) {
+                    aihao[i].checked=false
+                }
+            } */
+            
+
+            // 优化,直接赋值为第一个复选框的是否被选中的状态就可以了
+            for(var i = 0; i < aihao.length; i++) {
+                aihao[i].checked = firstchk.checked
+            }
+
+            }      
+        }
+
+
+        /*
+        处理当复选框中没有全部选中上，第一个复选框不不要选上
+        */
+        function bindChlic() {
+
+            // 第一个设置全选的对象
+            var firstchk = document.getElementById("firstchk")
+            // 所有同名一组复选框的对象
+            var aihao = document.getElementsByName("aihao")
+            // 遍历循环，判断所有同名一组的复选框的状态,
+            /*
+            1.通过点击事件，每点击选择一个复选框就判断是否需要全部勾选上所有的内容(第一个复选框)
+            2. 当所有复选框的被勾选的个数等于ainhao.length的总数就勾上全选，否则为不勾选全选
+            */
+            for(var i = 0; i < aihao.length; i++) {
+                // 判断每个复选框,是否勾选上
+                aihao[i].onclick = function() {
+                    // alert(111)  测试
+                    
+                    // 循环遍历所有的复选框的状态,当总数和选中的总数量相等的时候，第一个全选复选框选中checked=true,其他情况下第一个全选框取消选中 checked=false
+                    var count = 0;
+                    for(var i = 0; i < aihao.length; i++){
+                        
+                        // 选中count++计数
+                        if(aihao[i].checked) {
+                            count++;
+                        }
+                    }
+
+                    // window.alert(aihao.length) 测试u
+                    // console.log(count) 测试
+                    if(count == aihao.length) {
+                        // 等于复选框的总数，勾上全选
+                        firstchk.checked = true;
+                    } else {  // 总数不相等,取消第一个全选的勾选
+                        firstchk.checked = false;
+                    }
+
+                }
+            }
+        }
+
+    </script>
+<body onload="bindChlic()"> <!--全部加载完，才会触发该事件，调用该函数-->
+    <!--注意需要定义name为一组多选框-->
+    <input type="checkbox" id="firstchk" onclick="checkbox()" /><br>
+    <input type="checkbox" name="aihao" value="1" />敲代码 <br>
+    <input type="checkbox" name="aihao" value="2" /> 学习<br>
+    <input type="checkbox" name="aihao" value="3" />睡觉<br>
+</body>
+</html>

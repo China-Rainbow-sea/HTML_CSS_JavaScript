@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订餐服务</title>
+    <!--导入css文件-->
+    <link rel="stylesheet" type="text/css" href="./cart.css" />
+    <!--导入javarscript代码-->
+    <script src="./cart.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!--从大到小，依次构图-->
+    <!-- 多个订单-->
+    <div class="shops">
+        <h1>订餐服务</h1>
+        <!--第一个订单-->
+        <div class="shop">
+            <!--订单的头-->
+            <div class="header">
+                <!--订单的全选复选框-> -->
+                <input type="checkbox" class="shop_checkbox" id="allCheckbox" onclick="allCheckbox(this)"/>
+                <!--店铺的log,这里使用span的盒子,不会独占行,以块的形式显示-->
+                <span class="shop_icon"></span>
+                <!--餐厅名称-->
+                <span class="shop_name">“小味鲜”</span>
+                <!-- 餐厅的第二个log-->
+                <span class="shop_icon2"> </span>
+            </div>
+
+            <!--菜品条目一-->
+            <div class="item">
+                <!--订单条目的单选复选框-->
+                <div><input type="checkbox" class="item_checkbox"/></div>
+                <!--所选菜品的图片-->
+                <div class="item_img"><img src="./img/foot1.jpg" class="img" alt="">
+                </div>
+
+                <!--菜品介绍-->
+                <div class="promotion">
+                    <!--宣传语-->
+                    <div class="promotion_content">时尚雪纺衫女长袖2020春装新款内搭显瘦衬衫高档洋气小衫上衣打底</div>
+
+                    <!--三个小图标-->
+                    <div class="three_icons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- sku 菜品的参数信息-->
+                <div class="sku">
+                    <!--菜品的种类介绍-->
+                    <div class="sku_color">菜品的种类: 热菜</div>
+                    <!--菜品名-->
+                    <div class="sku_size">菜品: xxxL</div>
+                </div>
+
+                <!--菜品的价格-->
+                <div class="price">
+                    <!--原价 del:横线-->
+                    <div class="price1"><del>¥ 119.80</del></div>
+                    <!--实际活动价格-->
+                    <div class="price2">¥ 59.90</div>
+                    <!--定义隐藏域,用于获取该物品的单价，计算总价-->
+                    <input type="hidden" id="price1" value="59.90" />
+                </div>
+
+                <!--所选菜的数量-->
+                <div class="num">
+                    <span type="minux" onclick="minusProdact(this,'price1','item_total_price1')"> - </span>
+                    <!--注意单双引号交替使用-->
+                    <!--实际所需商品的个数-->
+                    <!--this表示当前标签对象,onkeydown表示鼠标按下事件,注意这里使用的是onkeyup按键弹起事件,因为我们要获取到的是时时输入的数据value,而按下事件获取到的是前一次的数据value-->
+                    <input type="text" value="1" onkeyup="modiffCount(this,'price1','item_total_price1')" />
+                    <span type="plus" onclick="addProdact(this,'price1','item_total_price1')"> + </span>
+                </div>
+
+                <!--该菜的总价: 数量*单价-->
+                <div class="item_total_price" id="item_total_price1">¥ 59.90</div>
+
+                <!--操作-->
+                <div class="operation">
+                    <!--删除,onclick点击事件-->
+                    <div class="del" onclick="del(this)">删除</div>
+                </div>
+            </div>
+
+            <!--所选菜品的条目二-->
+            <div class="item">
+                <!--订单条目的单选复选框-->
+                <div><input type="checkbox" class="item_checkbox" /></div>
+                <!--所选菜品的图片-->
+                <div class="item_img"><img src="./img/foot1.jpg" class="img" alt="">
+                </div>
+
+                <!--菜品介绍-->
+                <div class="promotion">
+                    <!--宣传语-->
+                    <div class="promotion_content">时尚雪纺衫女长袖2020春装新款内搭显瘦衬衫高档洋气小衫上衣打底</div>
+
+                    <!--三个小图标-->
+                    <div class="three_icons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- sku 菜品的参数信息-->
+                <div class="sku">
+                    <!--菜品的种类介绍-->
+                    <div class="sku_color">菜品的种类: 热菜</div>
+                    <!--菜品名-->
+                    <div class="sku_size">菜品: xxxL</div>
+                </div>
+
+                <!--菜品的价格-->
+                <div class="price">
+                    <!--原价 del:横线-->
+                    <div class="price1"><del>¥ 130.00</del></div>
+                    <!--实际活动价格-->
+                    <div class="price2">¥ 65.00</div>
+                    <!--定义隐藏域,用于获取该物品的单价-->
+                    <input type="hidden" id="price2" value="65.00" />
+                </div>
+
+                <!--所选菜的数量-->
+                <!--所选商品的数量-->
+                <div class="num">
+                    <span type="minux" onclick="minusProdact(this,'price2','item_total_price2')"> - </span>
+                    <!--实际所需菜品的个数-->
+                    <input type="text" value="1" onkeyup="modiffCount(this,'price2','item_total_price2')" />
+                    <span type="plus" onclick="addProdact(this,'price2','item_total_price2')"> + </span>
+                </div>
+
+                <!--该物品的总价: 数量*单价-->
+                <div class="item_total_price" id="item_total_price2">¥ 65.00</div>
+
+                <!--操作-->
+                <div class="operation">
+                    <!--删除,onclick点击事件-->
+                    <div class="del" onclick="del(this)">删除</div>
+                </div>
+            </div>
+            <!-- 所选菜品条目三 -->
+            <div class="item">
+                <!--订单条目的单选复选框-->
+                <div><input type="checkbox" class="item_checkbox" /></div>
+                <!--所选菜品的图片-->
+                <div class="item_img"><img src="./img/foot3.webp" class="img" alt="">
+                </div>
+
+                <!--菜品介绍-->
+                <div class="promotion">
+                    <!--宣传语-->
+                    <div class="promotion_content">时尚雪纺衫女长袖2020春装新款内搭显瘦衬衫高档洋气小衫上衣打底</div>
+
+                    <!--三个小图标-->
+                    <div class="three_icons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- sku 菜品的参数信息-->
+                <div class="sku">
+                    <!--菜品的种类介绍-->
+                    <div class="sku_color">菜品的种类: 热菜</div>
+                    <!--菜品名-->
+                    <div class="sku_size">菜品: xxxL</div>
+                </div>
+
+                <!--菜品的价格-->
+                <div class="price">
+                    <!--原价 del:横线-->
+                    <div class="price1"><del>¥ 998.00</del></div>
+                    <!--实际活动价格-->
+                    <div class="price2">¥ 666.00</div>
+                    <!--定义隐藏域,用于获取该物品的单价-->
+                    <input type="hidden" id="price3" value="666.00" />
+                </div>
+
+                <!--所选菜的数量-->
+                <!--所选商品的数量-->
+                <div class="num">
+                    <span type="minux" onclick="minusProdact(this,'price3','item_total_price3')"> - </span>
+                    <!--实际所需菜品的个数-->
+                    <input type="text" value="1" onkeyup="modiffCount(this,'price3','item_total_price3')" />
+                    <span type="plus" onclick="addProdact(this,'price3','item_total_price3')"> + </span>
+                </div>
+
+                <!--该物品的总价: 数量*单价-->
+                <div class="item_total_price" id="item_total_price3">¥ 666.00</div>
+
+                <!--操作-->
+                <div class="operation">
+                    <!--删除,onclick点击事件-->
+                    <div class="del" onclick="del(this)">删除</div>
+                </div>
+            </div>
+        </div>
+
+        <!--结算-->
+        <div class="checkout">
+            <!--全选处理-->
+            <div class="checkalldiv">
+                <span class="delchecked" onclick="delAll()">删除选中的菜</span>
+            </div>
+
+            <!--合计-->
+            <div class="checkout2">
+                <!--使用span盒子,不会独占行,以块的形式显示-->
+                已选菜品<span class="checkedcount">0</span>&nbsp;件
+                <span class="totaltext">合计: </span>
+                <span class="total_price">0.00</span>
+                <span class="checkoutbtn">结算</span>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

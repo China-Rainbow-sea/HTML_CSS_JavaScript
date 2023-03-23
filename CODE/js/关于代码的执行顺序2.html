@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于代码的执行顺序</title>
+</head>
+
+<body>
+    <!-- 当前的程序时存在问题的为解决-->
+    <script type="text/javascript">
+        /*根据id获取元素*/
+        /*代码执行到这里的时候,id=“bin" 的节点，还没有加载到浏览器的内存当中,所以以下代码返回null*/
+        var binElt = document.getElementById("bin")
+
+        binElt.onclick = funticoin() {
+            console.log(binElt)
+
+        }
+
+
+    </script>
+    <input type="button" value="hello" id="bin" />
+</body>
+
+</html>

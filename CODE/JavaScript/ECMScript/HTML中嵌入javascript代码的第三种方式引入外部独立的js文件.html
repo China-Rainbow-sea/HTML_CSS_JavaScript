@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML中嵌入javascipt 代码的第三种方式引入外部独立的js文件</title>
+</head>
+<body>
+    <!--在需要的位置引入js脚本文件-->
+    <script type="text/javascript" src="./js01.html">
+        window.alert("你好世界") // 注意：这种方式是导入 js文件是无法编写js文件的 这里的代码并不会被执行的
+    </script>
+
+    <input type="button" value="按钮" />
+
+    <!--同一个javascript文件可以被引入多次，但实际开发中这个需求很少被使用上的 -->
+    <script type="text/javascript" src="./js01.html"></script>
+    <!-- 注意 如下方式不行，script的结束符必须有，不可使用/分割开-->
+    <srcipt type="text/javascript" src="./js01.html" /> <!--注意这个不行的，javascript的结束符必须要有-->
+    
+</body>
+</html>

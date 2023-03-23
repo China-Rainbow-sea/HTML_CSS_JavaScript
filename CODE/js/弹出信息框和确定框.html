@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹出信息框和确认框</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function del() {
+            window.confirm("确认删除数据吗")
+        }
+
+        function del2() {
+            var ok = window.confirm("确定删除吗")
+            alert(ok) // 确定返回true,取消false
+            console.log(ok)
+        }
+
+        // 或者整合一下
+        if(window.confirm("确认删除吗")) {
+            window.alert("delete data....")
+        }
+
+    </script>
+    <input type="button" value="删除" onclick="del()" />
+    <input type="button" value="删除2" onclick="del2()">
+    <input type="button" value="删除3" onclick="del3()">
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+
+/* 处理四个店铺中的小图标 */
+/* 类选择器可以一次性写多个，使用逗号隔开，空格后面的是子元素 */
+.shop_icon,.shop_icon2,.three_icons span{   
+    width: 15px;
+    height: 15px;
+    background-color:rgb(225, 136, 20);
+    /*display显示样式:inline-block:以块的形式展现出来,但不会独占行*/
+    display: inline-block;
+}
+
+
+/* 设置所有的店铺的样式*/
+.shops {
+    /* 宽度 */
+    width: 1100px;
+    /* 背景颜色 */
+    background-color: aliceblue;
+    
+    /* 设置所有店铺的:div居中的方式: 左右两边的外补丁为 auto自动 */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 字号大小 */
+    font-size: 13px;
+    color: #121111;
+
+}
+
+/* 设置店铺之间的间距,使用向下的外补丁 */
+.shop{
+    margin-bottom: 20px;
+}
+
+/* 
+设置店铺名称的位置，
+让店铺的名称和左右两边的图标相互对齐
+实现方式:对店铺的名称进行一个相对定位,处理与下面的div的间距 */
+.shop_name {
+    /* relative 相对定位 */
+    position: relative; 
+    /* 相对离下面的div块的距离 */
+    bottom: 3px; 
+}
+
+/* 设置每个店铺头上的4个元素的右补丁控制间距 */
+.shop_checkbox,.shop_icon,.shop_name,.shop_icon2 {
+    margin-right: 10px;
+}
+
+/* 设置店铺的名称与下面的间距，打上外补丁 */
+.header {
+    /* 向下打外补丁 */
+    margin-bottom: 10px; 
+}
+
+
+/* 
+设置所有(类名一致)物品条目的样式,因为其中的我们采用的都是
+div块,div块是独占行的,所以这里我们进行一个弹性布局 */
+.item {
+    /* 弹性布局,div不会独占行,所以的div块,默认横线排列 */
+    display: flex;
+    /* 设置物品条目的背景色 */
+    background-color: #fafafa;
+    /* 设置div边框的像素,已经边框线样式，颜色 */
+    border: 1px solid #dad9d9;
+    /* 设置各个店铺的条目中的物品的间距，使用向内下打补丁 */
+    padding-bottom: 20px;
+    /* 设置各个店铺的条目中的物品的间距，使用向内上打补丁 */
+    padding-top: 20px;
+}
+
+
+/* 设置条目中物品的大小 */
+.item_img {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+/* 设置条目物品与物品图片的间距：右外补丁 */
+.item_checkbox,.item_img {
+    margin-right: 10px;
+} 
+
+
+/* 设置广告宣传部分的div的样式 */
+.promotion {
+    /* 弹性布局,div不会独占行,默认是横向布局 */
+    display: flex;
+    /* 将弹性布局默认的flex横向布局,修改为纵向布局 */
+    flex-direction: column;
+    /* 将div块的内容两端对齐 */
+    justify-content: space-between;
+
+    width: 250px;
+    /* 设置右外补丁，控制该广告div右边的间距 */
+    margin-right: 50px;
+
+}
+
+
+/* 设置sku商品参数的样式,这里设置右外补丁,控制间距 */
+.sku {
+    width: 150px;
+    margin-right: 100px;
+}
+
+/* 设置各个店铺条目物品的价格的样式 */
+.price{
+    width: 80px;
+    /* 控制间距右外打补丁 */
+    margin-right: 60px;
+    /* 字体加粗 */
+    font-weight: 600;
+}
+
+/* 原价的字体样式:字体颜色 */
+.price1 {
+   color: #8a8989d0; 
+}
+
+
+/* 所选商品数量的div样式 */
+.num {
+    width: 60px;
+    height: 30px;
+    /*背景颜色*/
+    background-color: #dad8d8;
+    /* 用于平衡左右的 +,- 向左边打内补丁 */
+    padding-left: 8px;
+    /* 控制间距,使用右外补丁 */
+    margin-right: 45px;
+
+}
+
+
+/* 输入物品数量的文本框的大小以及内容样式 */
+.num input {
+    width: 25px;
+    height: 25px;
+    /* 设置文本框中文字居中 */
+    text-align: center;
+}
+
+/* 设置总价的字体样式 */
+.item_total_price {
+    width: 60px;
+    /* 字体加粗样式 */
+    font-weight: 600;
+    color: #f31919;
+    margin-right: 30px;
+
+}
+
+.operation{
+    width: 100px;
+    height: 60px;
+
+    /* 弹性布局,div不会独占行,默认是横向布局 */
+    display: flex;
+    /* 将弹性布局默认的flex横向布局,修改为纵向布局 */
+    flex-direction: column;
+    /* 将div块的内容两端对齐 */
+    justify-content: space-between;
+    /*设置文字的字号大小*/
+    font-size: 15px;
+}
+
+/* 设置结算界面的样式 */
+.checkout{
+    /* 弹性布局,div会不独占行,默认横向排列 */
+    display: flex;
+    /* 将弹性布局中的两个大的div 两端对齐 */
+    justify-content: space-between;
+    background-color: #dad8d8;
+    height: 70px;
+    /* 向上打外补丁，控制间距 */
+    margin-top: 20px;
+    /* 向上打内补丁，控制间距 */
+    padding-top: 20px;
+}
+
+
+/* 全选设置样式，向右外打补丁控制间距 */
+.checkall {
+    margin-right: 100px;
+}
+
+/* 设置合计，结算样式，向左外打补丁，控制间距 */
+.totaltext,.checkoutbtn {
+    margin-left: 30px;
+}
+
+/* 设置结算中的件数，以及合计的字体样式 */
+.checkedcount,.total_price {
+    /* 字体字号 */
+    font-size: 20px;
+    /* 字体加粗 */
+    font-weight: 600;
+    color: #f31919;
+
+}
+/* 
+.checkout2{
+    position: relative;
+    bottom:15px ;
+} */
+
+
+/*设置结算的样式*/
+.checkoutbtn {
+    width: 85px;
+    height: 85px;
+    background-color: #555555;
+    /*设置div块,弹性布局，防止div独占行*/
+    display: inline-block;
+    /* 设置字体字号 */
+    font-size: 30px;
+    color: white;
+    /* 字体居中 */
+    text-align: center;
+    /* 字体的高 */
+    line-height: 70px;
+    /* relative:相对定位 */
+    position: relative;
+    /* 相对定位,相对于底部的距离 */
+    bottom: 17px;
+    
+}
+
+
+/* 设置删除,添加数量,移动到收藏夹,结算的鼠标经过的小手样式 */
+.num:hover,.favorite:hover,.del:hover,.delchecked:hover,.checkoutbtn:hover{
+    color:#f31919;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

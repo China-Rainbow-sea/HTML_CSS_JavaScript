@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript中的void 运算符的使用</title>
+</head>
+<body>
+    <br><br><br><br><br><br><br><br><br><br>
+    <!--需求: 既保留了超链接的格式，同时用户点击的该超链接的时候执行一段 js 代码，但是该页面还不能跳转-->
+    <!-- <a href="void(表达式)" onclick="window.alert('你好世界')"> </a>  注意:单双引号分开使用 -->
+    <!--
+        void 运算符的语法: void（表达式）
+        运算原理: 执行表达式，但不返回任何结果
+    -->
+
+    <a href="javascript:void(0)" onclick="window.alert('你好世界')">既保留了超链接的格式，同时用户点击的该超链接的时候执行一段 js 代码，但是该页面还不能跳转 </a>
+    <!-- javascript:void(0) 不会跳转 
+    作用: 是告诉浏览器后面是一段javascript代码
+    以下程序的javascript：是不能省略-->
+    <br>
+    <a href="javascript:void()" onclick="window.alert('你好世界')">既保留了超链接的格式，同时用户点击的该超链接的时候执行一段 js 代码，但是该页面还不能跳转 </a>
+    <!--注意：void()括号当中的内容值不可以省略-->
+
+    
+</body>
+</html>

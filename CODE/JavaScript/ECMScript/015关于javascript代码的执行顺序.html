@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript代码的执行顺序</title>
+</head>
+<body onload = "ready()"> <!--load 事件什么时候发生呢？当页面全部元素加载完毕之后才会发生该事件，-->
+    <script type="text/javascript">
+        // 第一步: 根据id 获取节点对象
+        // var btn = document.getElementById("btn"); // Cannot set properties of null 返回为 null 的原因是:因为代码执行到此处的时候，我们根据的 id = btn 的元素的值，还没有将该属性值加载到我们的页面的内存当中的，所以该函数是无法获取其中的值的
+
+        // // 第二步: 给节点对象绑定事件
+        // btn.onclick = function() {
+        //     window.alert("hello javascript");
+        // }
+
+
+        // 该 ready() 函数当页面中所有的元素加载完毕的时候就执行了。 
+        function ready () {
+            var btn = document.getElementById("btn");  //
+            // 下面这个函数：当该 onclick 按钮事件触发才会执行
+            btn.onclick = function() { // 绑定事件
+                window.alert("hello javascript");
+            }
+        }
+    </script>
+    
+    <input type="button" value="hello" id="btn" />
+</body>
+</html>
